@@ -24,7 +24,7 @@
     var initModal = function (el, options) {
         var $el = $(el),
             settings = {
-                title: 'Hello',
+                title: 'Проведём базовую настройку Roistat',
                 successMessage: 'Ваши данные успешно отправлены. Спасибо!',
                 errorMessage: 'error',
                 erp: true,

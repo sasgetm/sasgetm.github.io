@@ -24,7 +24,7 @@
 
 <div class="modal js-modal">
     <div class="close js-close-modal">
-        <i class="fa fa-times" aria-hidden="true"></i>
+        <i class="x fa fa-times" aria-hidden="true"></i>
     </div>
     <h3 class="modal__title js-modal__title"></h3>
     <form class="js-form">
@@ -73,30 +73,30 @@
 		<input type="hidden" id="1301595dcac97f1689dref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
 		<input type="hidden" name="requestTime" value="1573570943">
 		<input type="hidden" name="requestSimpleSign" value="08caa1a9f842d72c41dda9ce7ab56776">
-		<input type="hidden" name="isHtmlWidget" value="1"/></form>
+		<input type="hidden" name="isHtmlWidget" value="1"/>
 
-<span id="gccounterImgContainer"></span>
+		<span id="gccounterImgContainer"></span>
     </form>
     <div class="answer js-answer">
         <img class="answer-image js-answer-image">
         <p class="answer-text js-answer-text"></p>
     </div>
-    <script>
-	window.onload = function(){
-		let loc = document.getElementById("1301595dcac97f1689d");
-		loc.value = window.location.href;
-		let ref = document.getElementById("1301595dcac97f1689dref");
-		ref.value = document.referrer;
-	}
-</script>
-<script async defer>
-	window.onload = function(){
-		let statUrl = "https://edu.roistat.com/stat/counter?ref=" + encodeURIComponent(document.referrer)
-			+ "&loc=" + encodeURIComponent(document.location.href);
-		document.getElementById('gccounterImgContainer').innerHTML
-			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
-	}
-</script>
+	<!-- <script>
+		window.onload = function(){
+			let loc = document.getElementById("1301595dcac97f1689d");
+			loc.value = window.location.href;
+			let ref = document.getElementById("1301595dcac97f1689dref");
+			ref.value = document.referrer;
+		}
+	</script>
+	<script async defer>
+		window.onload = function(){
+			let statUrl = "https://edu.roistat.com/stat/counter?ref=" + encodeURIComponent(document.referrer)
+				+ "&loc=" + encodeURIComponent(document.location.href);
+			document.getElementById('gccounterImgContainer').innerHTML
+				= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+		}
+	</script> -->
 </div>
 
 <nav class="navbar navbar-fixed-top navbar-default navbar-top">
@@ -220,6 +220,10 @@
 				</div>
 				<div class="floor2item-textbl">
 					<span class="floor2item-textbl_orange">Google таблицы</span><span class="floor2item-textbl_white"></span>
+					<div class="help">
+						<div class="help-icon"></div>
+						<span class="help-text help-text_right"><span class="bold">ГуглТаблицы</span> — Решение подойдет, если вы не ведете учет заявок в CRM или CMS.</span>
+					</div>
 				</div>
 			</div>
 			<div class="floor2-item floor2item col-sm-3">
@@ -230,10 +234,10 @@
 				</div>
 				<div class="floor2item-textbl">
 					<span class="floor2item-textbl_orange">Коллтрекинг</span><span class="floor2item-textbl_white"> — систему аналитики источников звонков</span>
-					<!-- <div class="help">
+					<div class="help">
 						<div class="help-icon"></div>
-						<span class="help-text"></span>
-					</div> -->
+						<span class="help-text help-text_right"><span class="bold">Коллтрекинг</span> — Рекомендуем подключить, если более 15% обращений поступает по звонкам.</span>
+					</div>
 				</div>
 			</div>
 			<div class="floor2-item floor2item col-sm-4">
@@ -244,6 +248,10 @@
 				</div>
 				<div class="floor2item-textbl">
 					<span class="floor2item-textbl_orange">Емейлтрекинг</span><span class="floor2item-textbl_white"> — инструмент для отслеживания и учёта электронных писем</span>
+					<div class="help">
+						<div class="help-icon"></div>
+						<span class="help-text help-text_right"><span class="bold">Емейлтрекинг</span> — Необходим для компании, в которой клиенты предпочитают оставлять заявки по электронной почте.</span>
+					</div>
 				</div>
 			</div>
 			<div class="floor2-item floor2item col-sm-4">
@@ -264,6 +272,10 @@
 				</div>
 				<div class="floor2item-textbl">
 					<span class="floor2item-textbl_orange">Ловец лидов</span><span class="floor2item-textbl_white"> — форму для связи, которая всплывает перед уходящими с сайта клиентами</span>
+					<div class="help">
+						<div class="help-icon"></div>
+						<span class="help-text help-text_right"><span class="bold">Ловец Лидов</span> — Вернет вам 7% клиентов, уходящих с сайта</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -336,7 +348,7 @@
 	</div>
 </div>
 
-</div><!-- .article -->
+</div><!-- article -->
 
 <section id="got-any-questions" class="text-center">
     <div class="container">
