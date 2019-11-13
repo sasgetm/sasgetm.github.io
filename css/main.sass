@@ -195,7 +195,10 @@ input:-ms-input-placeholder
 .floor1
 	padding: 152px 0 80px
 .floor1-bg
-	background: url(../img/fl1bg.jpg) right center no-repeat
+	background: url(../img/fl1bg.jpg) 110% center no-repeat
+.floor1-textbl
+	background: rgba(255,255,255,0.7)
+	box-shadow: 0 0 30px rgba(255,255,255,1)
 .floor1-head1
 	display: block
 	color: #50AF85
@@ -234,13 +237,14 @@ input:-ms-input-placeholder
 .floor1-buttonbl
 	text-align: left
 // button
-@media (max-width: 767px)
-	.floor1
-		padding: 84px 0 40px
+@media (max-width: 991px)
 	.floor1-bg
 		background: url(../img/fl1bg.jpg) center bottom no-repeat
 		padding-bottom: 340px
 		background-size: 320px
+@media (max-width: 767px)
+	.floor1
+		padding: 84px 0 40px
 	.floor1-head1
 		font-size: 16px
 		line-height: 22px
@@ -402,6 +406,9 @@ input:-ms-input-placeholder
 		margin: 0
 		font-size: 18px
 		line-height: 25px
+	.x
+		top: -5px
+		right: 0px
 .bottombl.closed, .bottombl.close
 	bottom: -300px
 @media (max-width: 767px)
