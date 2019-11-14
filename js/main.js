@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	function getCookie(name) {
+	  let matches = document.cookie.match(new RegExp(
+	    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	  ));
+	  return matches ? decodeURIComponent(matches[1]) : '';
+	}
 	$(window).scroll(function () {
         // "use strict";
         var scroll = $(window).scrollTop();
@@ -8,7 +14,7 @@ $(document).ready(function() {
             $(".navbar").removeClass("navbar-fixed").addClass("navbar-top");
         }
         if (scroll > 1000) {
-            $(".bottombl").removeClass("closed")
+            $(".bottombl").removeClass("closed");
         } else {
             $(".bottombl").addClass("closed");
         }
@@ -19,6 +25,38 @@ $(document).ready(function() {
 		getcourse: false
 	});
 	$('.closeblock').on('click', function() {
-		$('.bottombl').addClass('close')
+		$('.bottombl').addClass('close');
 	})
+
+	$('.js-submit-data').on('click', function (e) {
+		e.preventDefault();
+		
+		var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
+			data = {
+				email: $('.input__email').val(),
+				phone: $('.input__phone').val(),
+				roistat_id: getCookie('roistat_visit')
+			};
+
+		$.ajax({
+			type: 'POST',
+			data: data,
+			url: url,
+			success: function () {
+				$(".js-answer").text("Ваша заявка отправлена.");
+			},
+			error: function () {
+				$("js-answer").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
+			}
+		});
+	});
+
+	
+	var uagent = navigator.userAgent.toLowerCase();
+	if (uagent.search("android|iphone|ipad|ipod") > -1) {
+		$('.sidebl').addClass('.mobile');
+	};
+	// $('.closeblock').on('click', function() {
+	// 	$('.bottombl').addClass('close');
+	// })
 })
