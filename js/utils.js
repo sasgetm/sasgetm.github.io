@@ -31,7 +31,7 @@
                 getcourse: true,
                 getcourseID: 409792882,
                 buttonText: 'Заказать презентацию',
-                public_key: '',
+                public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
                     id: 24840335,
                     targetName: ''

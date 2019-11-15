@@ -19,50 +19,50 @@ $(document).ready(function() {
 
 		if (email == "") {
 			$('.input__email').addClass('error');
-			$('.oksend').text('Пожалуйста, введите e-mail.');
+			$('.oksend').fadeIn('fast').text('Пожалуйста, введите e-mail.');
 		}
 		else if (!(mch.test(email))) {
 			$('.input__email').addClass('error');
-			$('.oksend').text('E-mail введен неправильно.');
+			$('.oksend').fadeIn('fast').text('E-mail введен неправильно.');
 		}
 		else if (phone == "") {
 			$('.input__phone').addClass('error');
-			$('.oksend').text('Пожалуйста, введите номер телефона.');
+			$('.oksend').fadeIn('fast').text('Пожалуйста, введите номер телефона.');
 		}
 		else if (!(tch.test(phone))) {
 			$('.input__phone').addClass('error');
-			$('.oksend').text('Номер телефона введен неправильно.');
+			$('.oksend').fadeIn('fast').text('Номер телефона введен неправильно.');
 		}
 		else if (!($('#agreecheck1').prop('checked'))) {
-			$('.oksend').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
+			$('.oksend').fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
 		} else {
 			var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
 				data = {
 					email: email,
 					phone: phone,
 					roistat_id: getCookie('roistat_visit'),
-					public_key: ''
+					public_key: 'F1F80A6A60BADCAD6631F323B084FA8B'
 				};
 
-			console.log('submit')
+			// console.log('submit')
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	data: data,
-			// 	url: url,
-			// 	success: function () {
-			// 		$(".js-answer").text("Ваша заявка отправлена.");
-			// 	},
-			// 	error: function () {
-			// 		$("js-answer").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
-			// 	}
-			// });
+			$.ajax({
+				type: 'POST',
+				data: data,
+				url: url,
+				success: function () {
+					$(".oksend").text("Ваша заявка отправлена.");
+				},
+				error: function () {
+					$(".oksend").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
+				}
+			});
 		}
 	});
 
-	$(".js-form").submit(function(e){
-		e.preventDefault(); 
-	});
+	// $(".js-form").submit(function(e){
+	// 	e.preventDefault(); 
+	// });
 
 	
 	var uagent = navigator.userAgent.toLowerCase();
