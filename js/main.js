@@ -60,7 +60,7 @@ $(document).ready(function() {
             $(".sidebl").removeClass("closed");
         }
 
-        sideblclose;
+        sideblclose();
     });
 	var $openModal = $('.js-open-modal');
 	// console.log($openModal);
