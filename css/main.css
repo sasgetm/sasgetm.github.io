@@ -378,7 +378,8 @@ input:-ms-input-placeholder {
   transition: 0.25s; }
   .bottombl .container {
     padding: 16px 15px 0 110px;
-    background: url(../img/guy.png) 15px bottom no-repeat; }
+    background: url(../img/guy.png) 15px bottom no-repeat;
+    min-height: 80px; }
   .bottombl p {
     margin: 0;
     font-size: 18px;
