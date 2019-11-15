@@ -385,7 +385,7 @@ input:-ms-input-placeholder
 		margin-right: 11px
 		position: absolute
 		left: 0
-		top: 3px
+		top: 4px
 	label
 		font-size: 15px
 		color: #fff
@@ -427,7 +427,7 @@ input:-ms-input-placeholder
 .sidebl
 	position: fixed
 	background: #fff
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15)
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15)
 	width: 300px
 	top: 50%
 	margin-top: -150px
@@ -436,14 +436,15 @@ input:-ms-input-placeholder
 	padding: 10px
 	text-align: center
 	transition: .5s
-.sidebl.hover
-	right: 0
-.sidebl.closed
-	right: -350px
-.sidebl
 	.formobile
 		display: none
 		padding: 50px 0 0 0
+.sidebl.open
+	right: -300px !important
+.sidebl.hover
+	right: 0 !important
+.sidebl.closed
+	right: -350px
 .sidebl-label
 	background: linear-gradient(to bottom, #51B187 0%, #49A279 100%), #C4C4C4
 	border-radius: 8px 8px 0px 0px

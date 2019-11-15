@@ -77,5 +77,6 @@ $(document).ready(function() {
 	});
 	$('.closeblock').on('click', function() {
 		$('.bottombl').addClass('close');
+		$('.sidebl').addClass('open');
 	})
 })
