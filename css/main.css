@@ -55,14 +55,6 @@ h2 {
   text-align: center;
   font-weight: 400; }
 
-a:hover, a:focus {
-  color: inherit; }
-
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  outline: none; }
-
 .green {
   color: #1cb39b; }
 
@@ -86,6 +78,15 @@ a:focus {
   border: 0; }
 .article button:hover, .article input[type="submit"]:hover, .article .button:hover, .modal button:hover, .modal input[type="submit"]:hover, .modal .button:hover {
   background: linear-gradient(#17c18b, #00aa78); }
+.article a, .modal a {
+  text-decoration: underline; }
+.article a:hover, .article a:focus, .modal a:hover, .modal a:focus {
+  color: inherit;
+  text-decoration: none; }
+.article a:focus, .modal a:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none; }
 
 input[type="text"] {
   width: 100%;

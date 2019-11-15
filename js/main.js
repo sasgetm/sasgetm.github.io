@@ -5,28 +5,63 @@ $(document).ready(function() {
 	  ));
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
+
 	$('.js-submit-data').on('click', function (e) {
 		e.preventDefault();
-		
-		var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
-			data = {
-				email: $('.input__email').val(),
-				phone: $('.input__phone').val(),
-				roistat_id: getCookie('roistat_visit'),
-				public_key: ''
-			};
 
-		$.ajax({
-			type: 'POST',
-			data: data,
-			url: url,
-			success: function () {
-				$(".js-answer").text("Ваша заявка отправлена.");
-			},
-			error: function () {
-				$("js-answer").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
-			}
-		});
+		$('input[type=text]').removeClass('error');
+
+		var email = $('.input__email').val();
+		var phone = $('.input__phone').val();
+
+		var mch = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+		var tch = /^[\+\d\(\)\ -]{4,18}\d$/;
+
+		if (email == "") {
+			$('.input__email').addClass('error');
+			$('.oksend').text('Пожалуйста, введите e-mail.');
+		}
+		else if (!(mch.test(email))) {
+			$('.input__email').addClass('error');
+			$('.oksend').text('E-mail введен неправильно.');
+		}
+		else if (phone == "") {
+			$('.input__phone').addClass('error');
+			$('.oksend').text('Пожалуйста, введите номер телефона.');
+		}
+		else if (!(tch.test(phone))) {
+			$('.input__phone').addClass('error');
+			$('.oksend').text('Номер телефона введен неправильно.');
+		}
+		else if (!($('#agreecheck1').prop('checked'))) {
+			$('.oksend').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
+		} else {
+			var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
+				data = {
+					email: email,
+					phone: phone,
+					roistat_id: getCookie('roistat_visit'),
+					public_key: ''
+				};
+
+			console.log('submit')
+
+			// $.ajax({
+			// 	type: 'POST',
+			// 	data: data,
+			// 	url: url,
+			// 	success: function () {
+			// 		$(".js-answer").text("Ваша заявка отправлена.");
+			// 	},
+			// 	error: function () {
+			// 		$("js-answer").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
+			// 	}
+			// });
+		}
+	});
+
+	$(".js-form").submit(function(e){
+		e.preventDefault(); 
 	});
 
 	
