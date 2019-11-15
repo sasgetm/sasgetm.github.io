@@ -63,6 +63,9 @@ a:focus {
   text-decoration: none;
   outline: none; }
 
+.green {
+  color: #1cb39b; }
+
 .article .button, .modal .button {
   display: inline-block; }
 .article button, .article input[type="submit"], .article .button, .modal button, .modal input[type="submit"], .modal .button {
@@ -404,7 +407,7 @@ input:-ms-input-placeholder {
   width: 300px;
   top: 50%;
   margin-top: -150px;
-  height: 330px;
+  height: 300px;
   right: -300px;
   padding: 10px;
   text-align: center;
@@ -424,10 +427,10 @@ input:-ms-input-placeholder {
   background: linear-gradient(to bottom, #51B187 0%, #49A279 100%), #C4C4C4;
   border-radius: 8px 8px 0px 0px;
   height: 30px;
-  width: 330px;
+  width: 300px;
   line-height: 30px;
   position: absolute;
-  bottom: 165px;
+  bottom: 150px;
   left: 0;
   -webkit-transform: rotate(270deg) translate(-50%);
   transform: rotate(270deg) translate(-50%);
@@ -449,6 +452,8 @@ input:-ms-input-placeholder {
 .qrcodebl {
   width: 100%;
   text-align: center; }
+  .qrcodebl img {
+    height: 150px; }
 
 .sidebl.mobile .formobile {
   display: block; }

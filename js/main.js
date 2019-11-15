@@ -12,7 +12,8 @@ $(document).ready(function() {
 			data = {
 				email: $('.input__email').val(),
 				phone: $('.input__phone').val(),
-				roistat_id: getCookie('roistat_visit')
+				roistat_id: getCookie('roistat_visit'),
+				public_key: ''
 			};
 
 		$.ajax({
