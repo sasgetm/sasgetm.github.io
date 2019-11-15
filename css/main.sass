@@ -68,7 +68,7 @@ a:focus
 		display: inline-block
 	button, input[type="submit"], .button
 		background: #51B187
-		padding: 0 8px
+		padding: 0
 		color: #fff
 		transition: 0.25s
 		font-size: 16px
@@ -196,7 +196,12 @@ input:-ms-input-placeholder
 .floor1
 	padding: 152px 0 80px
 .floor1-bg
-	background: url(../img/fl1bg.jpg) 110% center no-repeat
+	text-align: center
+	// background: url(../img/fl1bg.jpg) 110% center no-repeat
+	img
+		display: inline-block
+		width: 409px
+		max-width: 100%
 .floor1-textbl
 	background: rgba(255,255,255,0.7)
 	box-shadow: 0 0 30px rgba(255,255,255,1)
@@ -237,12 +242,7 @@ input:-ms-input-placeholder
 	font-size: 20px
 .floor1-buttonbl
 	text-align: left
-// button
-@media (max-width: 991px)
-	.floor1-bg
-		background: url(../img/fl1bg.jpg) center bottom no-repeat
-		padding-bottom: 340px
-		background-size: 320px
+	margin-bottom: 30px
 @media (max-width: 767px)
 	.floor1
 		padding: 84px 0 40px
@@ -251,9 +251,7 @@ input:-ms-input-placeholder
 		line-height: 22px
 	.floor1-head3
 		font-size: 23px
-		width: 100%
 		margin-left: 0
-		text-align: center
 		margin-bottom: 26px
 	.floor1-head4
 		font-size: 24px
@@ -276,7 +274,7 @@ input:-ms-input-placeholder
 	margin-bottom: 7px
 	height: 200px
 	img
-		max-height: 100% 
+		max-width: 100% 
 .floor2item-imgbl>div
 	text-align: center
 .floor2item-textbl
@@ -293,8 +291,10 @@ input:-ms-input-placeholder
 .help-icon
 	display: inline-block
 	background: url(../img/question.svg) center center no-repeat
-	width: 16px
-	height: 16px
+	background-size: contain
+	width: 26px
+	height: 21px
+	margin-bottom: -3px
 .help-text
 	position: absolute
 	bottom: 34px
@@ -306,9 +306,9 @@ input:-ms-input-placeholder
 	z-index: 1
 	width: 290px
 	margin-left: -145px
-	font-size: 20px
+	font-size: 16px
 	line-height: 27px
-	padding: 32px
+	padding: 15px
 	border-radius: 8px
 	text-align: center
 	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15)
@@ -336,9 +336,6 @@ input:-ms-input-placeholder
 
 .floor3
 	padding: 56px 0
-.floor3-bg
-	background: url(../img/fl3bg.jpg) right center no-repeat
-	background-size: contain
 .floor3-list
 .floor3-item
 	padding-left: 40px
@@ -354,13 +351,14 @@ input:-ms-input-placeholder
 	margin: 8px 0 8px 32px
 	color: $gray
 	font-size: 15px
+.floor3-bg
+	text-align: center
+	img
+		width: 464px
+		max-width: 100%
 @media (max-width: 767px)
 	.floor3
 		padding-bottom: 40px
-	.floor3-bg
-		background: url(../img/fl3bg.jpg) center bottom no-repeat
-		padding-bottom: 310px
-		background-size: 320px
 	.floor3item_text
 		margin: 8px 0
 
@@ -382,7 +380,7 @@ input:-ms-input-placeholder
 		margin-right: 11px
 		position: absolute
 		left: 0
-		top: -2px
+		top: 3px
 	label
 		font-size: 15px
 		color: #fff
@@ -403,8 +401,7 @@ input:-ms-input-placeholder
 	z-index: 1
 	transition: 0.25s
 	.container
-		padding: 16px 0
-		padding-left: 100px
+		padding: 16px 15px 0 110px
 		background: url(../img/guy.png) 15px bottom no-repeat
 	p
 		margin: 0
@@ -415,7 +412,12 @@ input:-ms-input-placeholder
 		right: 0px
 .bottombl.closed, .bottombl.close
 	bottom: -300px
-
+@media (max-width: 991px)
+	.bottombl button
+		font-size: 12px
+@media (max-width: 767px)
+	.bottombl button
+		font-size: 16px
 .sidebl
 	position: fixed
 	background: #fff
@@ -428,8 +430,11 @@ input:-ms-input-placeholder
 	padding: 10px
 	text-align: center
 	transition: .5s
-.sidebl:hover
+.sidebl.hover
 	right: 0
+.sidebl.closed
+	right: -350px
+
 .sidebl-label
 	background: linear-gradient(to bottom, #51B187 0%, #49A279 100%), #C4C4C4
 	border-radius: 8px 8px 0px 0px
@@ -452,6 +457,9 @@ input:-ms-input-placeholder
 	margin-bottom: 5px
 .whatsappbuttonbl
 	display: none
+	.button
+		background: linear-gradient(180deg, #009FE2 0%, #0093D1 100%), linear-gradient(180deg, #51B187 0%, #49A279 100%)
+		margin: 20px 0
 .qrcodebl
 	width: 100%
 	text-align: center
@@ -465,4 +473,4 @@ input:-ms-input-placeholder
 		font-size: 14px
 		line-height: 19px
 	.bottombl-buttonbl
-		margin: 5px 0 0 0
+		margin: 10px 0 10px 0

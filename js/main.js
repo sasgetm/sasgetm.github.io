@@ -5,29 +5,6 @@ $(document).ready(function() {
 	  ));
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
-	$(window).scroll(function () {
-        // "use strict";
-        var scroll = $(window).scrollTop();
-        if (scroll > 60) {
-            $(".navbar").addClass("navbar-fixed").removeClass("navbar-top");
-        } else {
-            $(".navbar").removeClass("navbar-fixed").addClass("navbar-top");
-        }
-        if (scroll > 1000) {
-            $(".bottombl").removeClass("closed");
-        } else {
-            $(".bottombl").addClass("closed");
-        }
-    });
-	var $openModal = $('.js-open-modal');
-	// console.log($openModal);
-	$openModal.rsModal({
-		getcourse: false
-	});
-	$('.closeblock').on('click', function() {
-		$('.bottombl').addClass('close');
-	})
-
 	$('.js-submit-data').on('click', function (e) {
 		e.preventDefault();
 		
@@ -57,7 +34,40 @@ $(document).ready(function() {
 	if (uagent.search("android|iphone|ipad|ipod") > -1) {
 		$('.sidebl').addClass('mobile');
 	};
-	// $('.closeblock').on('click', function() {
-	// 	$('.bottombl').addClass('close');
-	// })
+
+	function sideblopen() {
+		$('.sidebl').addClass('hover');
+	}
+	function sideblclose() {
+		$('.sidebl').removeClass('hover');
+	}
+	$('.sidebl').mouseover(sideblopen);
+	$('.sidebl').mouseout(sideblclose);
+	// $('.sidebl').on()
+	$(window).scroll(function () {
+        // "use strict";
+        var scroll = $(window).scrollTop();
+        if (scroll > 60) {
+            $(".navbar").addClass("navbar-fixed").removeClass("navbar-top");
+        } else {
+            $(".navbar").removeClass("navbar-fixed").addClass("navbar-top");
+        }
+        if (scroll > 1000) {
+            $(".bottombl").removeClass("closed");
+            $(".sidebl").addClass("closed");
+        } else {
+            $(".bottombl").addClass("closed");
+            $(".sidebl").removeClass("closed");
+        }
+
+        sideblclose;
+    });
+	var $openModal = $('.js-open-modal');
+	// console.log($openModal);
+	$openModal.rsModal({
+		getcourse: false
+	});
+	$('.closeblock').on('click', function() {
+		$('.bottombl').addClass('close');
+	})
 })
