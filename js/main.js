@@ -43,7 +43,14 @@ $(document).ready(function() {
 	}
 	$('.sidebl').mouseover(sideblopen);
 	$('.sidebl').mouseout(sideblclose);
-	// $('.sidebl').on()
+	$('.sidebl-label').on('click', function() {
+		console.log('click')
+		if ($('.sidebl').hasClass('hover')) {
+			sideblclose();
+		} else {
+			sideblopen();
+		}
+	})
 	$(window).scroll(function () {
         // "use strict";
         var scroll = $(window).scrollTop();

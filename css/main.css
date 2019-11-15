@@ -403,7 +403,7 @@ input:-ms-input-placeholder {
   width: 300px;
   top: 50%;
   margin-top: -150px;
-  height: 300px;
+  height: 330px;
   right: -300px;
   padding: 10px;
   text-align: center;
@@ -415,14 +415,17 @@ input:-ms-input-placeholder {
 .sidebl.closed {
   right: -350px; }
 
+.sidebl .formobile {
+  display: none; }
+
 .sidebl-label {
   background: linear-gradient(to bottom, #51B187 0%, #49A279 100%), #C4C4C4;
   border-radius: 8px 8px 0px 0px;
   height: 30px;
-  width: 100%;
+  width: 330px;
   line-height: 30px;
   position: absolute;
-  bottom: 150px;
+  bottom: 165px;
   left: 0;
   -webkit-transform: rotate(270deg) translate(-50%);
   transform: rotate(270deg) translate(-50%);
@@ -437,20 +440,18 @@ input:-ms-input-placeholder {
   text-align: center;
   margin-bottom: 5px; }
 
-.whatsappbuttonbl {
-  display: none; }
-  .whatsappbuttonbl .button {
-    background: linear-gradient(180deg, #009FE2 0%, #0093D1 100%), linear-gradient(180deg, #51B187 0%, #49A279 100%);
-    margin: 20px 0; }
+.whatsappbuttonbl .button, .whatsappbuttonbl .button:hover {
+  background: linear-gradient(180deg, #009FE2 0%, #0093D1 100%), linear-gradient(180deg, #51B187 0%, #49A279 100%);
+  margin: 20px 0; }
 
 .qrcodebl {
   width: 100%;
   text-align: center; }
 
-.sidebl.mobile .qrcodebl {
-  display: none; }
-.sidebl.mobile .whatsappbuttonbl {
+.sidebl.mobile .formobile {
   display: block; }
+.sidebl.mobile .fordesktop {
+  display: none; }
 
 @media (max-width: 767px) {
   .bottombl p {

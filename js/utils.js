@@ -24,13 +24,13 @@
     var initModal = function (el, options) {
         var $el = $(el),
             settings = {
-                title: 'Проведём базовую настройку Roistat',
+                title: 'Закажите презентацию Roistat',
                 successMessage: 'Ваши данные успешно отправлены. Спасибо!',
                 errorMessage: 'error',
                 erp: true,
                 getcourse: true,
                 getcourseID: 409792882,
-                buttonText: 'Записаться',
+                buttonText: 'Заказать презентацию',
                 public_key: '',
                 ym: {
                     id: 24840335,
