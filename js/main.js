@@ -53,8 +53,9 @@ $(document).ready(function() {
 
 	
 	var uagent = navigator.userAgent.toLowerCase();
+	console.log(uagent);
 	if (uagent.search("android|iphone|ipad|ipod") > -1) {
-		$('.sidebl').addClass('.mobile');
+		$('.sidebl').addClass('mobile');
 	};
 	// $('.closeblock').on('click', function() {
 	// 	$('.bottombl').addClass('close');
