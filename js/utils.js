@@ -144,23 +144,28 @@
         }
 
         function submitDataToErp(public_key) {
-            $.ajax({
-                type: 'POST',
-                url: 'https://roistat.com/ml/leadhunter/scripts/send.php',
-                data: {
-                    phone: $phoneField.val(),
-                    email: $emailField.val(),
-                    name: $nameField.val(),
-                    public_key: public_key,
-                    roistat_id: getCookie('roistat_visit')
-                },
-                success: function () {
-                    showAnswer(true);
-                },
-                error: function () {
-                    showAnswer(false);
-                }
-            });
+            // $.ajax({
+            //     type: 'POST',
+            //     url: 'https://roistat.com/ml/leadhunter/scripts/send.php',
+            //     data: {
+            //         phone: $phoneField.val(),
+            //         email: $emailField.val(),
+            //         name: $nameField.val(),
+            //         public_key: public_key,
+            //         roistat_id: getCookie('roistat_visit')
+            //     },
+            //     success: function () {
+            //         showAnswer(true);
+            //     },
+            //     error: function () {
+            //         showAnswer(false);
+            //     }
+            // });
+
+
+            var url = "https://cloud.roistat.com/lead/register";
+            var urlWithParams = url + "?" + 'email=' + $emailField.val() + '&name=' + $nameField.val() + '&roistat_id=' + getCookie('roistat_visit') + '&phone=' + $phoneField.val() + '&public_key=' + public_key + '&is_need_response=1';
+            window.location.href = urlWithParams;
         }
 
         function submitDataToGetcourse() {

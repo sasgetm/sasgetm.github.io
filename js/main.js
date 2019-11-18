@@ -37,27 +37,35 @@ $(document).ready(function() {
 			$('.oksend').fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
 		} else {
 			$('.js-submit-data').attr('disabled', 'disabled');
-			var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
-				data = {
-					email: email,
-					phone: phone,
-					roistat_id: getCookie('roistat_visit'),
-					public_key: 'F1F80A6A60BADCAD6631F323B084FA8B'
-				};
+			// var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
+			// 	data = {
+			// 		email: email,
+			// 		phone: phone,
+			// 		roistat_id: getCookie('roistat_visit'),
+			// 		public_key: 'F1F80A6A60BADCAD6631F323B084FA8B'
+			// 	};
+
+			var roistat_id = getCookie('roistat_visit');
+			var public_key ='F1F80A6A60BADCAD6631F323B084FA8B';
 
 			// console.log('submit')
+			var url = "https://cloud.roistat.com/lead/register";
+	        var urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
+			window.location.href = urlWithParams;
 
-			$.ajax({
-				type: 'POST',
-				data: data,
-				url: url,
-				success: function () {
-					$(".oksend").fadeIn('fast').text("Ваша заявка отправлена.");
-				},
-				error: function () {
-					$(".oksend").fadeIn('fast').text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
-				}
-			});
+			// $.ajax({
+			// 	type: 'POST',
+			// 	data: data,
+			// 	url: url,
+			// 	success: function () {
+			// 		$(".oksend").fadeIn('fast').text("Ваша заявка отправлена.");
+			// 		window.open(urlWithParams);
+			//         window.location.href = urlWithParams;
+			// 	},
+			// 	error: function () {
+			// 		$(".oksend").fadeIn('fast').text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
+			// 	}
+			// });
 		}
 	});
 
