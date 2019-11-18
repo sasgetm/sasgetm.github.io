@@ -5,7 +5,7 @@ $(document).ready(function() {
 	  ));
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
-	
+
 	var roistat_id = getCookie('roistat_visit');
 
 	$('.js-submit-data').on('click', function (e) {
@@ -39,34 +39,13 @@ $(document).ready(function() {
 			$('.oksend').fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
 		} else {
 			$('.js-submit-data').attr('disabled', 'disabled');
-			// var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
-			// 	data = {
-			// 		email: email,
-			// 		phone: phone,
-			// 		roistat_id: getCookie('roistat_visit'),
-			// 		public_key: 'F1F80A6A60BADCAD6631F323B084FA8B'
-			// 	};
 
 			var public_key ='F1F80A6A60BADCAD6631F323B084FA8B';
 
-			// console.log('submit')
 			var url = "https://cloud.roistat.com/lead/register";
 	        var urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
 			window.location.href = urlWithParams;
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	data: data,
-			// 	url: url,
-			// 	success: function () {
-			// 		$(".oksend").fadeIn('fast').text("Ваша заявка отправлена.");
-			// 		window.open(urlWithParams);
-			//         window.location.href = urlWithParams;
-			// 	},
-			// 	error: function () {
-			// 		$(".oksend").fadeIn('fast').text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
-			// 	}
-			// });
 		}
 	});
 
@@ -75,13 +54,9 @@ $(document).ready(function() {
 	var demobutton = 'https://cloud.roistat.com/user/register?demo=1&tags=199&roistatId='+roistat_id+'&lang=ru';
 	$('.navbar-nav__reg-button').attr('href', enterbutton);
 	$('.demobutton').attr('href', demobutton);
-	// $(".js-form").submit(function(e){
-	// 	e.preventDefault(); 
-	// });
 
 	
 	var uagent = navigator.userAgent.toLowerCase();
-	// console.log(uagent);
 	if (uagent.search("android|iphone|ipad|ipod") > -1) {
 		$('.sidebl').addClass('mobile');
 	};
@@ -121,7 +96,6 @@ $(document).ready(function() {
         sideblclose();
     });
 	var $openModal = $('.js-open-modal');
-	// console.log($openModal);
 	$openModal.rsModal({
 		getcourse: false
 	});
