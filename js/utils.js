@@ -162,8 +162,6 @@
             //     }
             // });
 
-            fbq('track', 'Lead');
-            ga('send', 'event', 'roistat_lead', 'click');
 
             var url = "https://cloud.roistat.com/lead/register";
             var urlWithParams = url + "?" + 'email=' + $emailField.val() + '&name=' + $nameField.val() + '&roistat_id=' + getCookie('roistat_visit') + '&phone=' + $phoneField.val() + '&public_key=' + public_key + '&is_need_response=1';
@@ -283,5 +281,6 @@
         initModal($(this), options);
     };
 
-    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+    ga('send', 'event', 'roistat_lead', 'click');
 })(jQuery);
