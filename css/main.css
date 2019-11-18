@@ -352,8 +352,13 @@ input:-ms-input-placeholder {
     padding: 0 8px;
     margin-bottom: 16px; }
 
-.floor4-form button[type="submit"] {
+.floor4-form .js-submit-data {
   width: 100%; }
+.floor4-form .js-submit-data[disabled="disabled"] {
+  opacity: 0.6; }
+.floor4-form .js-submit-data[disabled="disabled"]:hover {
+  cursor: default;
+  background: linear-gradient(180deg, #51B187 0%, #49A279 100%); }
 
 .floor4-agreecheck {
   position: relative; }

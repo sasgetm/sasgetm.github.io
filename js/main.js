@@ -36,6 +36,7 @@ $(document).ready(function() {
 		else if (!($('#agreecheck1').prop('checked'))) {
 			$('.oksend').fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
 		} else {
+			$('.js-submit-data').attr('disabled', 'disabled');
 			var url = 'https://roistat.com/ml/leadhunter/scripts/send.php',
 				data = {
 					email: email,
@@ -51,10 +52,10 @@ $(document).ready(function() {
 				data: data,
 				url: url,
 				success: function () {
-					$(".oksend").text("Ваша заявка отправлена.");
+					$(".oksend").fadeIn('fast').text("Ваша заявка отправлена.");
 				},
 				error: function () {
-					$(".oksend").text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
+					$(".oksend").fadeIn('fast').text("Сообщение не передано. Пожалуйста, повторите попытку позже.");
 				}
 			});
 		}
@@ -66,7 +67,7 @@ $(document).ready(function() {
 
 	
 	var uagent = navigator.userAgent.toLowerCase();
-	console.log(uagent);
+	// console.log(uagent);
 	if (uagent.search("android|iphone|ipad|ipod") > -1) {
 		$('.sidebl').addClass('mobile');
 	};
