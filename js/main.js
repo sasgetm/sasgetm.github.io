@@ -5,6 +5,8 @@ $(document).ready(function() {
 	  ));
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
+	
+	var roistat_id = getCookie('roistat_visit');
 
 	$('.js-submit-data').on('click', function (e) {
 		e.preventDefault();
@@ -45,7 +47,6 @@ $(document).ready(function() {
 			// 		public_key: 'F1F80A6A60BADCAD6631F323B084FA8B'
 			// 	};
 
-			var roistat_id = getCookie('roistat_visit');
 			var public_key ='F1F80A6A60BADCAD6631F323B084FA8B';
 
 			// console.log('submit')
@@ -69,6 +70,11 @@ $(document).ready(function() {
 		}
 	});
 
+	var enterbutton = 'https://cloud.roistat.com/user/login?tags=199&roistatId='+roistat_id+'&lang=ru';
+	console.log(enterbutton)
+	var demobutton = 'https://cloud.roistat.com/user/register?demo=1&tags=199&roistatId='+roistat_id+'&lang=ru';
+	$('.navbar-nav__reg-button').attr('href', enterbutton);
+	$('.demobutton').attr('href', demobutton);
 	// $(".js-form").submit(function(e){
 	// 	e.preventDefault(); 
 	// });
