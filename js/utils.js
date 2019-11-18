@@ -34,7 +34,7 @@
                 public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
                     id: 24840335,
-                    targetName: ''
+                    targetName: 'fast_start_lead'
                 }
             },
             $checkboxLink = $('.js-checkbox__link'),
@@ -162,6 +162,8 @@
             //     }
             // });
 
+            fbq('track', 'Lead');
+            ga('send', 'event', 'roistat_lead', 'click');
 
             var url = "https://cloud.roistat.com/lead/register";
             var urlWithParams = url + "?" + 'email=' + $emailField.val() + '&name=' + $nameField.val() + '&roistat_id=' + getCookie('roistat_visit') + '&phone=' + $phoneField.val() + '&public_key=' + public_key + '&is_need_response=1';

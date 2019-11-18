@@ -44,6 +44,9 @@ $(document).ready(function() {
 
 			var url = "https://cloud.roistat.com/lead/register";
 	        var urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
+	        fbq('track', 'Lead');
+	        ym(24840335, 'reachGoal', 'fast_start_lead');
+	        ga('send', 'event', 'roistat_lead', 'click');
 			window.location.href = urlWithParams;
 
 		}
