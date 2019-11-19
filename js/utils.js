@@ -11,7 +11,7 @@
                 buttonText: 'Заказать презентацию',
                 public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
-                    id: 56286271,
+                    id: 24840335,
                     targetName: 'fast_start_lead'
                 }
             },
