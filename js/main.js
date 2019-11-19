@@ -6,12 +6,14 @@ $(document).ready(function() {
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
 
-	var roistat_id = getCookie('roistat_visit');
+	var roistat_id = getCookie('roistat_visit'),
+		$jsSubmit = $('.js-submit-data'),
+		$inputText = $('input[type=text]');
 
-	$('.js-submit-data').on('click', function (e) {
+	$jsSubmit.on('click', function (e) {
 		e.preventDefault();
 
-		$('input[type=text]').removeClass('error');
+		$inputText.removeClass('error');
 
 		var email = $('.input__email').val();
 		var phone = $('.input__phone').val();
@@ -83,7 +85,6 @@ $(document).ready(function() {
 		}
 	})
 	$(window).scroll(function () {
-        // "use strict";
         var scroll = $(window).scrollTop();
         if (scroll > 60) {
             $(".navbar").addClass("navbar-fixed").removeClass("navbar-top");
