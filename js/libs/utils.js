@@ -122,24 +122,6 @@
         }
 
         function submitDataToErp(public_key) {
-            // $.ajax({
-            //     type: 'POST',
-            //     url: 'https://roistat.com/ml/leadhunter/scripts/send.php',
-            //     data: {
-            //         phone: $phoneField.val(),
-            //         email: $emailField.val(),
-            //         name: $nameField.val(),
-            //         public_key: public_key,
-            //         roistat_id: getCookie('roistat_visit')
-            //     },
-            //     success: function () {
-            //         showAnswer(true);
-            //     },
-            //     error: function () {
-            //         showAnswer(false);
-            //     }
-            // });
-
             var url = "https://cloud.roistat.com/lead/register";
             var urlWithParams = url + "?" + 'email=' + $emailField.val() + '&name=' + $nameField.val() + '&roistat_id=' + getCookie('roistat_visit') + '&phone=' + $phoneField.val() + '&public_key=' + public_key + '&is_need_response=1';
 
@@ -197,7 +179,6 @@
             $.merge($countryItem, $flagBox).on('click', function () {
                 var $this = $(this);
                 $dropdown.toggleClass('show');
-                console.log(345);
                 if (document.documentElement.clientWidth <= 550) {
                     $phoneField.css({borderBottomRightRadius: 0});
                 }
@@ -211,11 +192,8 @@
                 if (!validateForm()) {
                     return;
                 }
-
                 submitData();
                 sendMetrics(settings.ym.id, settings.ym.targetName);
-
-                //$form.submit();
             });
 
             $flagBox.on('click', function () {
@@ -256,9 +234,6 @@
     };
 
     $.fn.rsModal = function (options) {
-        // $(this).each(function (index, el) {
-        //     initModal(el, options);
-        // });
         initModal($(this), options);
     };
 })(jQuery);

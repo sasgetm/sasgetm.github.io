@@ -9,7 +9,7 @@
 
 			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-			<link rel="stylesheet" href="css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
 			<link rel="stylesheet" href="css/headerfooter.css">
 			<link rel="stylesheet" href="css/main.css">
 	</head>
@@ -17,6 +17,7 @@
 	<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
+
 <div class="overlay js-overlay"></div>
 
 <div class="modal js-modal">
@@ -89,7 +90,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<div class="navbar-brand" onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');">
+			<div class="navbar-brand">
 				<a class="navbar-logo" href="/ru/">
 					<img src="img/logo_black.png" alt="Roistat">
 				</a>
@@ -123,8 +124,8 @@
 				<li><a href="/ru/partners/referral">Партнеры</a></li>
 				<li class="hidden-md hidden-sm"><a href="/ru/connection">Подключить</a></li>
 				<li class="hidden-sm"><a href="https://roistat.com/ru/blog/category/keysy" target="_blank">Кейсы</a></li>
-				<li class="hidden-sm"><a onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');" href="" class="demobutton js-register-href">Демо</a></li>
-				<li><a onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');" href="" class="navbar-nav__reg-button border js-register-href">Войти</a></li>
+				<li class="hidden-sm"><a href="" class="demobutton js-register-href">Демо</a></li>
+				<li><a href="" class="navbar-nav__reg-button border js-register-href">Войти</a></li>
 			</ul>
 		</div>
 	</div>
@@ -132,115 +133,110 @@
 
 <div class="article">
 
-	<div class="floor1">
+	<div class="floor-one">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 floor1-textbl">
-					<span class="floor1-head1">Специальное предложение для малого бизнеса</span>
-					<h1 class="floor1-head2">Проведем настройку Roistat</h1>
-					<span class="floor1-head3">от&ensp;3 000&ensp;руб.<!-- &#x20bd; --> | от 3-х дней</span>
-					<span class="floor1-head4">Быстро подключим сайт и&nbsp;CRM. Вам&nbsp;останется только пользоваться</span>
-					<div class="floor1-line"></div>
-					<p class="floor1-head5">Для тех, у кого нет технических специалистов, и тех, кто  хочет начать использовать сквозную аналитику в ближайшие дни!</p>
-					<div class="floor1-buttonbl">
-						<button class="js-open-modal" onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');">Заказать презентацию</button>
+				<div class="col-sm-8 floor-one__textbl">
+					<span class="floor-one__head-one">Специальное предложение для малого бизнеса</span>
+					<h1 class="floor-one__head-two">Проведем настройку Roistat</h1>
+					<span class="floor-one__head-three">от&ensp;3 000&ensp;руб.<!-- &#x20bd; --> | от 3-х дней</span>
+					<span class="floor-one__head-four">Быстро подключим сайт и&nbsp;CRM. Вам&nbsp;останется только пользоваться</span>
+					<p class="floor-one__head-five">Для тех, у кого нет технических специалистов, и тех, кто  хочет начать использовать сквозную аналитику в ближайшие дни!</p>
+					<div class="floor-one__buttonbl">
+						<button class="js-open-modal">Заказать презентацию</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<div class="floor1-bg">
-						<img src="img/fl1bg.jpg" alt="">
+					<div class="floor-one__bg">
+						<img src="img/fl1bg.jpg" alt="Проведем настройку Roistat">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="floor2 bluebg">
+	<div class="floor-two bluebg">
 		<div class="container">
 			<h2>Что можем подключить:</h2>
-			<div class="row floor2-items">
-				<div class="floor2-item floor2item col-sm-3">
-					<div class="floor2item-imgbl dt">
+			<div class="row floor-two__items">
+				<div class="floor-two__item floor-two-item col-sm-3">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item1.png" alt="">
+							<img src="img/fl2item1.png" alt="Сайты">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange">Сайты</span><span class="floor2item-textbl_white"> — самописные, созданные с помощью конструктора или CMS</span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange">Сайты</span><span class="floor-two-item__textbl_white"> — самописные, созданные с помощью конструктора или CMS</span>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-3">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two__item floor-two-item col-sm-3">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item2.png" alt="">
+							<img src="img/fl2item2.png" alt="CRM">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange">CRM:</span><span class="floor2item-textbl_white"> Битрикс24, amoCRM, RetailCRM, МойСклад, Мегаплан, 1С-Битрикс и InSales</span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange">CRM:</span><span class="floor-two-item__textbl_white"> Битрикс24, amoCRM, RetailCRM, МойСклад, Мегаплан, 1С-Битрикс и InSales</span>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-3">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two-item floor-two-item col-sm-3">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item3.png" alt="">
+							<img src="img/fl2item3.png" alt="Google таблицы">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange">Google таблицы</span><span class="floor2item-textbl_white"></span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange">Google таблицы</span><span class="floor-two-item__textbl_white"></span>
 						<div class="help">
-							<div class="help-icon"></div>
 							<span class="help-text help-text_right">Решение подойдет, если вы не&nbsp;ведете учет заявок в&nbsp;CRM или&nbsp;CMS.</span>
 						</div>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-3">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two__item floor-two-item col-sm-3">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item4.png" alt="">
+							<img src="img/fl2item4.png" alt="Коллтрекинг">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange"><a href="/ru/features/calltracking">Коллтрекинг</a></span><span class="floor2item-textbl_white"> — систему аналитики источников звонков</span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange"><a href="/ru/features/calltracking">Коллтрекинг</a></span><span class="floor-two-item__textbl_white"> — систему аналитики источников звонков</span>
 						<div class="help">
-							<div class="help-icon"></div>
 							<span class="help-text help-text_right">Рекомендуем подключить, если более 15% обращений поступает по&nbsp;звонкам.</span>
 						</div>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-4">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two__item floor-two-item col-sm-4">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item5.png" alt="">
+							<img src="img/fl2item5.png" alt="Емейлтрекинг">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange"><a href="/ru/features/emailtracking">Емейлтрекинг</a></span><span class="floor2item-textbl_white"> — инструмент для отслеживания и учета электронных писем</span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange"><a href="/ru/features/emailtracking">Емейлтрекинг</a></span><span class="floor-two-item__textbl_white"> — инструмент для отслеживания и учета электронных писем</span>
 						<div class="help">
-							<div class="help-icon"></div>
 							<span class="help-text help-text_right">Необходим для компании, в&nbsp;которой клиенты предпочитают оставлять заявки по&nbsp;электронной почте.</span>
 						</div>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-4">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two__item floor-two-item col-sm-4">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item6.png" alt="">
+							<img src="img/fl2item6.png" alt="Чат, обратный звонок и формы заявки">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange">Чат, обратный звонок и формы заявки</span><span class="floor2item-textbl_white"></span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange">Чат, обратный звонок и формы заявки</span><span class="floor-two-item__textbl_white"></span>
 					</div>
 				</div>
-				<div class="floor2-item floor2item col-sm-4">
-					<div class="floor2item-imgbl dt">
+				<div class="floor-two__item floor-two-item col-sm-4">
+					<div class="floor-two-item__imgbl dt">
 						<div class="dtc">
-							<img src="img/fl2item7.png" alt="">
+							<img src="img/fl2item7.png" alt="Ловец лидов">
 						</div>
 					</div>
-					<div class="floor2item-textbl">
-						<span class="floor2item-textbl_orange"><a href="/ru/features/lead-hunter">Ловец лидов</a></span><span class="floor2item-textbl_white"> — форму для связи, которая всплывает перед уходящими с сайта клиентами</span>
+					<div class="floor-two-item__textbl">
+						<span class="floor-two-item__textbl_orange"><a href="/ru/features/lead-hunter">Ловец лидов</a></span><span class="floor-two-item__textbl_white"> — форму для связи, которая всплывает перед уходящими с сайта клиентами</span>
 						<div class="help">
-							<div class="help-icon"></div>
 							<span class="help-text help-text_right">Вернет вам 7% клиентов, уходящих с&nbsp;сайта</span>
 						</div>
 					</div>
@@ -249,49 +245,49 @@
 		</div>
 	</div>
 
-	<div class="floor3">
+	<div class="floor-three">
 		<div class="container">
 			<h2>Что вы получите после настройки</h2>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-7">
-					<ul class="floor3-list">
-						<li class="floor3-item floor3item">
-							<span class="floor3item_head">Актуальную статистику</span>
-							<p class="floor3item_text">Данные подгружаются онлайн, поэтому статистика всегда свежая</p>
+					<ul class="floor-three__list">
+						<li class="floor-three__item floor-threeitem">
+							<span class="floor-threeitem_head">Актуальную статистику</span>
+							<p class="floor-threeitem_text">Данные подгружаются онлайн, поэтому статистика всегда свежая</p>
 						</li>
-						<li class="floor3-item floor3item">
-							<span class="floor3item_head">Сэкономленное время</span>
-							<p class="floor3item_text">Настроим за пять рабочих дней после получения доступов</p>
+						<li class="floor-three__item floor-threeitem">
+							<span class="floor-threeitem_head">Сэкономленное время</span>
+							<p class="floor-threeitem_text">Настроим за пять рабочих дней после получения доступов</p>
 						</li>
-						<li class="floor3-item floor3item">
-							<span class="floor3item_head">Персонального менеджера</span>
-							<p class="floor3item_text">Менеджер ответит на вопросы и подскажет зоны роста проекта. Вы не останетесь одни</p>
+						<li class="floor-three__item floor-threeitem">
+							<span class="floor-threeitem_head">Персонального менеджера</span>
+							<p class="floor-threeitem_text">Менеджер ответит на вопросы и подскажет зоны роста проекта. Вы не останетесь одни</p>
 						</li>
-						<li class="floor3-item floor3item">
-							<span class="floor3item_head">Обучение работе с Roistat</span>
-							<p class="floor3item_text">На вебинарах веб-аналитики расскажут, как работает сервис и как с его помощью оптимально распределить бюджет на рекламу и увеличить прибыльность бизнеса</p>
+						<li class="floor-three__item floor-threeitem">
+							<span class="floor-threeitem_head">Обучение работе с Roistat</span>
+							<p class="floor-threeitem_text">На вебинарах веб-аналитики расскажут, как работает сервис и как с его помощью оптимально распределить бюджет на рекламу и увеличить прибыльность бизнеса</p>
 						</li>
-						<li class="floor3-item floor3item">
-							<span class="floor3item_head">Аналитику по прибыли</span>
-							<p class="floor3item_text">Roistat сразу выдаст отчеты по работе бизнеса. На их основе вы оптимизируете рекламные кампании и станете получать больше прибыли</p>
+						<li class="floor-three__item floor-threeitem">
+							<span class="floor-threeitem_head">Аналитику по прибыли</span>
+							<p class="floor-threeitem_text">Roistat сразу выдаст отчеты по работе бизнеса. На их основе вы оптимизируете рекламные кампании и станете получать больше прибыли</p>
 						</li>
 					</ul>
 				</div>
 				<div class="col-sm-5">
-					<div class="floor3-bg">
-						<img src="img/fl3bg.jpg" alt="">
+					<div class="floor-three__bg">
+						<img src="img/fl3bg.jpg" alt="Что вы получите после настройки">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="floor4 bluebg">
+	<div class="floor-four bluebg">
 		<div class="container js-answer">
 			<h2><span class="orange">Закажите настройку Roistat</span><br>и начните увеличивать прибыль</h2>
-			<form data-action="https://roistat.com/ml/leadhunter/scripts/send.php" class="floor4-form">
+			<form data-action="https://roistat.com/ml/leadhunter/scripts/send.php" class="floor-four__form">
 				<div class="row">
 					<div class="col-sm-4">
 						<input class="input__email" type="text" name="email" placeholder="Email">
@@ -303,7 +299,7 @@
 						<button class="js-submit-data" type="submit">Заказать настройку</button>
 					</div>
 				</div>
-				<div class="floor4-agreecheck">
+				<div class="floor-four__agreecheck">
 					<input id="agreecheck1" type="checkbox" class="checkbox__input js-checkbox__input">
 					<label for="agreecheck1">Нажимая на кнопку, вы даете согласие на <a href="/ru/license/integration">обработку персональных данных</a></label>
 				</div>
@@ -321,7 +317,7 @@
 				</div>
 				<div class="col-sm-3">
 					<div class="bottombl-buttonbl">
-						<button class="js-open-modal" onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');">Заказать презентацию</button>
+						<button class="js-open-modal">Заказать презентацию</button>
 					</div>
 				</div>
 			</div>
@@ -329,17 +325,17 @@
 	</div>
 
 	<div class="sidebl">
-		<div class="sidebl-label"><img src="img/pointer.png" style="height: 18px; margin-right: 15px;" alt="">Бонус&ensp;2 000&ensp;руб</div>
+		<div class="sidebl__label"><img src="img/pointer.png" style="height: 18px; margin-right: 15px;" alt="pointer">Бонус&ensp;2 000&ensp;руб</div>
 		<div class="formobile">
-			<span class="sidebl-textbl">Узнайте больше о Базовой настройке в <span class="green">WhastApp</span></span>
+			<span class="sidebl__textbl">Узнайте больше о Базовой настройке в <span class="green">WhastApp</span></span>
 			<div class="whatsappbuttonbl">
-				<a onclick="fbq('track', 'InitiateCheckout'); roistat.event.send('roistat_button'); ym(24840335, 'reachGoal', 'fast_start_button'); ga('send', 'event', 'roistat_button', 'click');" href="https://myautobot.ru/l/qfo00bd" class="whatsappbutton button">2 000&ensp;руб. на аналитику<img src="img/waicon.png" style="height: 16px; margin-left: 5px;" alt=""></a>
+				<a href="https://myautobot.ru/l/qfo00bd" class="whatsappbutton button">2 000&ensp;руб. на аналитику<img src="img/waicon.png" style="height: 16px; margin-left: 5px;" alt="whatsapp"></a>
 				<p>В 1 клик в <a href="https://myautobot.ru/l/qfo00bd" class="green">WhatsApp</a></p>
 			</div>
 		</div>
 		<div class="fordesktop">
-			<span class="sidebl-textbl">Сканируйте QR-код, чтобы узнать больше о Базовой настройке</span>
-			<div class="qrcodebl"><img src="img/qr-code5.gif" alt=""></div>
+			<span class="sidebl__textbl">Сканируйте QR-код, чтобы узнать больше о Базовой настройке</span>
+			<div class="qrcodebl"><img src="img/qr-code5.gif" alt="qr-code"></div>
 			<p>В 1 клик в <span class="green">WhatsApp</span></p>
 		</div>
 	</div>
@@ -468,10 +464,10 @@
 	ga('send', 'pageview');
 </script>
 
-		<script src="js/jquery-3.1.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/utils.js"></script>
-		<script src="js/inputmask.min.js"></script>
+		<script src="js/vendor/jquery-3.1.1.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/inputmask.min.js"></script>
+		<script src="js/libs/utils.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
