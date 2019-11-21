@@ -39,7 +39,7 @@ $(document).ready(function () {
 		$elemCurrentYear.text(currentYearValue);
 	}
 	
-	function onRoistatModuleLoaded() {
+	function turnOffLeadHunter() {
 		if ($(window).width() < '768'){
 			window.onRoistatModuleLoaded = function () {
 				window.roistat.leadHunter.isEnabled = false;
@@ -158,5 +158,5 @@ $(document).ready(function () {
 
 	initEventListeners();
 	currentYear();
-	onRoistatModuleLoaded();
+	turnOffLeadHunter();
 });
