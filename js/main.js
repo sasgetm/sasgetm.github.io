@@ -41,7 +41,9 @@ $(document).ready(function () {
 	
 	function onRoistatModuleLoaded() {
 		if ($(window).width() < '768'){
-			window.roistat.leadHunter.isEnabled = false;
+			window.onRoistatModuleLoaded = function () {
+				window.roistat.leadHunter.isEnabled = false;
+			}
 		}
 	}
 
