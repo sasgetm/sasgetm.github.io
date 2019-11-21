@@ -1,136 +1,160 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	function getCookie(name) {
 	  let matches = document.cookie.match(new RegExp(
-	    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
 	  ));
 	  return matches ? decodeURIComponent(matches[1]) : '';
 	}
 
-	var roistat_id = getCookie('roistat_visit'),
-		$jsSubmit = $('.js-submit-data'),
-		$inputText = $('input[type=text]'),
-		$input__email = $('.input__email'),
-		$oksend = $('.oksend'),
-		$input__phone = $('.input__phone'),
-		$js_submit_data = $('.js-submit-data');
+	var $inputEmail = $('.js-input-email'),
+		$inputPhone = $('.js-input-phone'),
+		$answer = $('.js-answer'),
+		$submitData = $('.js-submit-data'),
+		$regButton = $('.js-reg-button'),
+		$demoButton = $('.js-demobutton'),
+		$sideBlock = $('.js-side-block'),
+		$navbar = $(".js-navbar"),
+		$bottomBlock = $(".js-bottom-block"),
+		$closeBlock = $('.js-closeblock'),
+		$targetButton = $('.js-target-button'),
+		$elemCurrentYear = $('.js-current-year'),
+		$openModal = $('.js-open-modal'),
+		$sideBlockLabel = $('.js-side-block-label'),
+		roistat_id = getCookie('roistat_visit'),
+		enterlink = 'https://cloud.roistat.com/user/login?tags=199&roistatId=' + roistat_id + '&lang=ru',
+		demolink = 'https://cloud.roistat.com/user/register?demo=1&tags=199&roistatId=' + roistat_id + '&lang=ru';
 
+	$regButton.attr('href', enterlink);
+	$demoButton.attr('href', demolink);
 
-	$jsSubmit.on('click', function (e) {
-		e.preventDefault();
+	function sendMetrics() {
+		fbq('track', 'InitiateCheckout');
+		roistat.event.send('roistat_button');
+		ym(24840335, 'reachGoal', 'fast_start_button');
+		ga('send', 'event', 'roistat_button', 'click');
+	}
 
-		$inputText.removeClass('error');
-
-		var email = $('.input__email').val();
-		var phone = $('.input__phone').val();
-
-		var mch = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-		var tch = /^[\+\d\(\)\ -]{4,18}\d$/;
-
-		if (email == "") {
-			$input__email.addClass('error');
-			$oksend.fadeIn('fast').text('Пожалуйста, введите e-mail.');
-		}
-		else if (!(mch.test(email))) {
-			$input__email.addClass('error');
-			$oksend.fadeIn('fast').text('E-mail введен неправильно.');
-		}
-		else if (phone == "") {
-			$input__phone.addClass('error');
-			$oksend.fadeIn('fast').text('Пожалуйста, введите номер телефона.');
-		}
-		else if (!(tch.test(phone))) {
-			$input__phone.addClass('error');
-			$oksend.fadeIn('fast').text('Номер телефона введен неправильно.');
-		}
-		else if (!($('#agreecheck1').prop('checked'))) {
-			$oksend.fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
-		} else {
-			$js_submit_data.attr('disabled', 'disabled');
-
-			var public_key ='F1F80A6A60BADCAD6631F323B084FA8B';
-
-			// var url = "https://cloud.roistat.com/lead/register";
-	  //       var urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
-
-	        fbq('track', 'Lead');
-	        ym(24840335, 'reachGoal', 'fast_start_lead');
-	        ga('send', 'event', 'roistat_lead', 'click');
-	        
-			// window.location.href = urlWithParams;
-
-		}
-	});
-
-	var enterbutton = 'https://cloud.roistat.com/user/login?tags=199&roistatId='+roistat_id+'&lang=ru';
-	var demobutton = 'https://cloud.roistat.com/user/register?demo=1&tags=199&roistatId='+roistat_id+'&lang=ru';
-	$('.navbar-nav__reg-button').attr('href', enterbutton);
-	$('.demobutton').attr('href', demobutton);
-
+	function currentYear() {
+		var currentYearValue = new Date().getFullYear();
+		$elemCurrentYear.text(currentYearValue);
+	}
 	
-	var uagent = navigator.userAgent.toLowerCase(),
-		$sidebl = $('.sidebl'),
-		$navbar = $(".navbar"),
-		$bottombl = $(".bottombl");
-
-	if (uagent.search("android|iphone|ipad|ipod") > -1) {
-		$sidebl.addClass('mobile');
-	};
-
-	function sideblopen() {
-		$sidebl.addClass('hover');
-	}
-	function sideblclose() {
-		$sidebl.removeClass('hover');
-	}
-	$sidebl.mouseover(sideblopen);
-	$sidebl.mouseout(sideblclose);
-	$('.sidebl__label').on('click', function() {
-		if ($sidebl.hasClass('hover')) {
-			sideblclose();
-		} else {
-			sideblopen();
+	function onRoistatModuleLoaded() {
+		if ($(window).width() < '768'){
+			window.roistat.leadHunter.isEnabled = false;
 		}
-	})
-	$(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll > 60) {
-            $navbar.addClass("navbar-fixed").removeClass("navbar-top");
-        } else {
-            $navbar.removeClass("navbar-fixed").addClass("navbar-top");
-        }
-        if (scroll > 1000) {
-            $bottombl.removeClass("closed");
-            $sidebl.addClass("closed");
-        } else {
-            $bottombl.addClass("closed");
-            $sidebl.removeClass("closed");
-        }
-        sideblclose();
-    });
+	}
 
-	var $openModal = $('.js-open-modal');
+	function initEventListeners() {	
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+
+			function showNavbar() {
+				if (scroll > 60) {
+					$navbar.addClass("navbar-fixed").removeClass("navbar-top");
+					return;
+				}
+				$navbar.removeClass("navbar-fixed").addClass("navbar-top");
+			}
+
+			function showBottomHideSide() {
+				if (scroll > 1000) {
+					$bottomBlock.removeClass("closed");
+					$sideBlock.addClass("closed");
+					return;
+				}
+				$bottomBlock.addClass("closed");
+				$sideBlock.removeClass("closed");
+			}
+			
+			showNavbar();
+			showBottomHideSide();
+			$sideBlock.removeClass('hover');
+		});
+
+		$submitData.on('click', function (e) {
+			e.preventDefault();
+
+			var email = $inputEmail.val(),
+				phone = $inputPhone.val(),
+				mailRegex = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i,
+				telRegex = /^[\+\d\(\)\ -]{4,18}\d$/;
+
+			function validateForm() {
+				if (email === "") {
+					$inputEmail.addClass('error');
+					$answer.fadeIn('fast').text('Пожалуйста, введите e-mail.');
+					return;
+				}
+
+				if (!(mailRegex.test(email))) {
+					$inputEmail.addClass('error');
+					$answer.fadeIn('fast').text('E-mail введен неправильно.');
+					return;
+				}
+
+				if (phone === "") {
+					$inputPhone.addClass('error');
+					$answer.fadeIn('fast').text('Пожалуйста, введите номер телефона.');
+					return;
+				}
+
+				if (!(telRegex.test(phone))) {
+					$inputPhone.addClass('error');
+					$answer.fadeIn('fast').text('Номер телефона введен неправильно.');
+					return;
+				}
+
+				if (!($('.agreecheck').prop('checked'))) {
+					$answer.fadeIn('fast').text('Подтвердите согласие с политикой конфиденциальности, поставив галочку.');
+					return;
+				}
+				return true
+			}
+
+			function submitForm() {
+				$submitData.attr('disabled', 'disabled');
+
+				var public_key ='F1F80A6A60BADCAD6631F323B084FA8B',
+					url = "https://cloud.roistat.com/lead/register",
+					urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
+
+				$answer.fadeIn('fast').text('Спасибо, ваше сообщение отправлено.');
+
+				fbq('track', 'Lead');
+				ym(24840335, 'reachGoal', 'fast_start_lead');
+				ga('send', 'event', 'roistat_lead', 'click');
+				
+				window.location.href = urlWithParams;
+			}
+
+			if (validateForm()) {
+				submitForm();
+			}
+		});
+
+		$sideBlockLabel.on('click', function () {
+			if ($sideBlock.hasClass('hover')) {
+				$sideBlock.removeClass('hover');
+				return;
+			}
+
+			$sideBlock.addClass('hover');
+		});
+
+		$closeBlock.on('click', function () {
+			$bottomBlock.addClass('close');
+			$sideBlock.addClass('open');
+		});
+
+		$targetButton.on('click', sendMetrics);
+	}
 
 	$openModal.rsModal({
 		getcourse: false
 	});
 
-	$('.closeblock').on('click', function() {
-		$bottombl.addClass('close');
-		$sidebl.addClass('open');
-	});
-
-	function targets () {
-		fbq('track', 'InitiateCheckout');
-		roistat.event.send('roistat_button');
-		ym(24840335, 'reachGoal', 'fast_start_button');
-		ga('send', 'event', 'roistat_button', 'click');
-		console.log('targets');
-	};
-
-	$('.navbar-brand').on('click', targets);
-	$('.demobutton').on('click', targets);
-	$('.navbar-nav__reg-button').on('click', targets);
-	$openModal.on('click', targets);
-	$('.whatsappbutton').on('click', targets);
-
+	initEventListeners();
+	currentYear();
+	onRoistatModuleLoaded();
 });

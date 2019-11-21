@@ -20,7 +20,8 @@
             $formBtn = $('.js-submit'),
             $phoneField = $('.js-phone'),
             $nameField = $('.js-name'),
-            $emailField = $('.js-email');
+            $emailField = $('.js-email'),
+            $roistatVisit = getCookie('roistat_visit');
 
         $.extend(true, settings, options);
 
@@ -41,10 +42,14 @@
             $formBtn.text(buttonText);
         }
 
+        function showError(field, message) {
+            $('<p class="error"><span class="highlight-error">Ошибка:</span> ' + message + '</p>').insertAfter(field.closest('.input-group'));
+                field.addClass('error-field');
+        }
+
         function checkNameField() {
             if ($nameField.val() === '') {
-                $('<p class="error"><span class="highlight-error">Ошибка:</span> для отправки формы заполните поле!</p>').insertAfter($nameField.closest('.input-group'));
-                $nameField.addClass('error-field');
+                showError($nameField, 'для отправки формы заполните поле!');
                 return false;
             }
             return true;
@@ -52,25 +57,22 @@
 
         function checkPhoneField() {
             if ($phoneField.val() === '') {
-                $('<p class="error"><span class="highlight-error">Ошибка:</span> для отправки формы заполните поле!</p>').insertAfter($phoneField.closest('.input-group'));
-                $phoneField.addClass('error-field');
+                showError($phoneField, 'для отправки формы заполните поле!');
                 return false;
             }
             return true;
         }
 
         function checkEmailField() {
-            var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.}+)\.([a-zA-Z]{1,5})$/;
+            var emailRegex = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 
             if ($emailField.val() === '') {
-                $('<p class="error"><span class="highlight-error">Ошибка:</span> для отправки формы заполните поле!</p>').insertAfter($emailField.closest('.input-group'));
-                $emailField.addClass('error-field');
+                showError($emailField, 'для отправки формы заполните поле!');
                 return false;
             }
 
-            if (emailRegex.test($emailField.val())) {
-                $('<p class="error"><span class="highlight-error">Ошибка:</span> адрес электронной почты указан некорректно</p>').insertAfter( $emailField.closest('.input-group') );
-                $emailField.addClass('error-field');
+            if (!(emailRegex.test($emailField.val()))) {
+                showError($emailField, 'адрес электронной почты указан некорректно');
                 return false;
             }
 
@@ -122,8 +124,11 @@
         }
 
         function submitDataToErp(public_key) {
-            var url = "https://cloud.roistat.com/lead/register";
-            var urlWithParams = url + "?" + 'email=' + $emailField.val() + '&name=' + $nameField.val() + '&roistat_id=' + getCookie('roistat_visit') + '&phone=' + $phoneField.val() + '&public_key=' + public_key + '&is_need_response=1';
+            var url = "https://cloud.roistat.com/lead/register",
+                $emailFieldVal = $emailField.val(),
+                $nameFieldVal = $nameField.val(),
+                $phoneFieldVal = $phoneField.val(),
+                urlWithParams = url + "?" + 'email=' + $emailFieldVal + '&name=' + $nameFieldVal + '&roistat_id=' + roistatVisit + '&phone=' + $phoneFieldVal + '&public_key=' + public_key + '&is_need_response=1';
 
             fbq('track', 'Lead');
             ga('send', 'event', 'roistat_lead', 'click');
@@ -177,21 +182,24 @@
             });
 
             $.merge($countryItem, $flagBox).on('click', function () {
-                var $this = $(this);
                 $dropdown.toggleClass('show');
+
                 if (document.documentElement.clientWidth <= 550) {
                     $phoneField.css({borderBottomRightRadius: 0});
                 }
+
                 $phoneField.toggleClass('phone__input--active');
             });
 
             $formBtn.on('click', function (e) {
+
                 e.preventDefault();
                 resetErrorStyles();
 
                 if (!validateForm()) {
                     return;
                 }
+
                 submitData();
                 sendMetrics(settings.ym.id, settings.ym.targetName);
             });
