@@ -1,17 +1,9 @@
 $(document).ready(function () {
-	function getCookie(name) {
-	  let matches = document.cookie.match(new RegExp(
-		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-	  ));
-	  return matches ? decodeURIComponent(matches[1]) : '';
-	}
-
 	var $inputEmail = $('.js-input-email'),
 		$inputPhone = $('.js-input-phone'),
 		$answer = $('.js-answer'),
 		$submitData = $('.js-submit-data'),
-		$regButton = $('.js-reg-button'),
-		$demoButton = $('.js-demobutton'),
+		$forGenerating = $('.js-generate-link'),
 		$sideBlock = $('.js-side-block'),
 		$navbar = $(".js-navbar"),
 		$bottomBlock = $(".js-bottom-block"),
@@ -20,12 +12,20 @@ $(document).ready(function () {
 		$elemCurrentYear = $('.js-current-year'),
 		$openModal = $('.js-open-modal'),
 		$sideBlockLabel = $('.js-side-block-label'),
-		roistat_id = getCookie('roistat_visit'),
-		enterlink = 'https://cloud.roistat.com/user/login?tags=199&roistatId=' + roistat_id + '&lang=ru',
-		demolink = 'https://cloud.roistat.com/user/register?demo=1&tags=199&roistatId=' + roistat_id + '&lang=ru';
+		roistat_id = getCookie('roistat_visit');
 
-	$regButton.attr('href', enterlink);
-	$demoButton.attr('href', demolink);
+	function getCookie(name) {
+	  let matches = document.cookie.match(new RegExp(
+		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	  ));
+	  return matches ? decodeURIComponent(matches[1]) : '';
+	}
+	
+	function generateLink() {
+		$('.js-generate-link').attr('href', function(i, val) {
+			return val + '&roistatId=' + roistat_id;
+		});
+	}
 
 	function sendMetrics() {
 		fbq('track', 'InitiateCheckout');
@@ -80,7 +80,10 @@ $(document).ready(function () {
 			var email = $inputEmail.val(),
 				phone = $inputPhone.val(),
 				mailRegex = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i,
-				telRegex = /^[\+\d\(\)\ -]{4,18}\d$/;
+				telRegex = /^[\+\d\(\)\ -]{4,18}\d$/,
+				public_key ='F1F80A6A60BADCAD6631F323B084FA8B',
+				url = "https://cloud.roistat.com/lead/register",
+				urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
 
 			function validateForm() {
 				if (email === "") {
@@ -117,10 +120,6 @@ $(document).ready(function () {
 			function submitForm() {
 				$submitData.attr('disabled', 'disabled');
 
-				var public_key ='F1F80A6A60BADCAD6631F323B084FA8B',
-					url = "https://cloud.roistat.com/lead/register",
-					urlWithParams = url + "?" + 'email=' + email + '&roistat_id=' + roistat_id + '&phone=' + phone + '&public_key=' + public_key + '&is_need_response=1';
-
 				$answer.fadeIn('fast').text('Спасибо, ваше сообщение отправлено.');
 
 				fbq('track', 'Lead');
@@ -156,6 +155,7 @@ $(document).ready(function () {
 		getcourse: false
 	});
 
+	generateLink();
 	initEventListeners();
 	currentYear();
 	turnOffLeadHunter();
