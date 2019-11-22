@@ -128,7 +128,7 @@
                 $emailFieldVal = $emailField.val(),
                 $nameFieldVal = $nameField.val(),
                 $phoneFieldVal = $phoneField.val(),
-                urlWithParams = url + "?" + 'email=' + $emailFieldVal + '&name=' + $nameFieldVal + '&roistat_id=' + roistatVisit + '&phone=' + $phoneFieldVal + '&public_key=' + public_key + '&is_need_response=1';
+                urlWithParams = url + "?" + 'email=' + $emailFieldVal + '&name=' + $nameFieldVal + '&roistat_id=' + $roistatVisit + '&phone=' + $phoneFieldVal + '&public_key=' + public_key + '&is_need_response=1';
 
             fbq('track', 'Lead');
             ga('send', 'event', 'roistat_lead', 'click');
