@@ -88,6 +88,9 @@ p {
 .col-sm-2 {
   width: 16.66666667%; }
 
+.mobileshow {
+  display: none; }
+
 .green {
   color: #51B187; }
 
@@ -218,7 +221,7 @@ a:focus {
   margin-right: -10px; }
 
 .text-bgimg__buttonblock {
-  margin-top: 48px; }
+  margin: 48px 0 16px 0; }
 
 .text-bgimg__bg-block {
   text-align: right;
@@ -484,27 +487,42 @@ a:focus {
   .speaker .bgimg-text__text-block {
     padding-top: 24px; } }
 @media (max-width: 767px) {
+  body {
+    text-align: center; }
+
   .col-sm-7, .col-sm-5, .col-sm-6, .col-sm-4, .col-sm-8, .col-sm-3, .col-sm-2 {
     width: 100%; }
 
+  .mobileshow {
+    display: inherit; }
+
+  .mobilehide {
+    display: none !important; }
+
   h1 {
     font-size: 40px;
-    line-height: 48px; }
+    line-height: 48px;
+    text-align: center; }
 
   h2 {
     line-height: 48px;
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    text-align: center; }
 
   .logo-button-header {
     padding: 32px 0 24px;
     text-align: left; }
 
   .logo-button-header__logo-block {
-    float: initial; }
+    float: initial;
+    text-align: center; }
 
   .logo-button-header__right-block {
     float: initial;
     display: inline-block; }
+
+  .text-bgimg__text-block {
+    text-align: center; }
 
   .text-bgimg__description {
     font-weight: 700;
@@ -515,21 +533,44 @@ a:focus {
     text-align: center;
     margin-right: 0; }
 
+  .first-floor {
+    padding: 0 0 24px; }
+
   .bgimg-text__bg-block {
     text-align: center; }
 
   .item-topimg-text {
-    height: initial; }
+    height: initial;
+    width: 400px;
+    max-width: 100%;
+    display: inline-block; }
 
   .item-topbgimg-text {
-    height: initial; }
+    height: initial;
+    width: 400px;
+    max-width: 100%;
+    display: inline-block; }
+
+  .item-topimg-text__text {
+    text-align: left; }
+
+  .item-topbgimg-text__text {
+    text-align: left; }
+
+  .item-topnumber-text__number {
+    width: 140px;
+    display: inline-block; }
+
+  .speaker .buttonbl {
+    text-align: center; }
 
   .footer__socials {
-    float: left; }
+    float: initial; }
 
   .footer__socials li {
-    float: left;
-    margin: 0 24px 0 0; }
+    float: initial;
+    display: inline-block;
+    margin: 0 12px; }
 
   .side-block__label {
     height: 30px;

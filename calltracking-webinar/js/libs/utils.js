@@ -2,13 +2,13 @@
     var initModal = function (el, options) {
         var $el = $(el),
             settings = {
-                title: 'Закажите презентацию Roistat',
+                title: '',
                 successMessage: 'Ваши данные успешно отправлены. Спасибо!',
                 errorMessage: 'error',
                 erp: true,
                 getcourse: true,
                 getcourseID: 409792882,
-                buttonText: 'Заказать презентацию',
+                buttonText: 'Отправить',
                 public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
                     id: 24840335,
@@ -124,16 +124,34 @@
         }
 
         function submitDataToErp(public_key) {
-            var url = "https://cloud.roistat.com/lead/register",
-                $emailFieldVal = $emailField.val(),
-                $nameFieldVal = $nameField.val(),
-                $phoneFieldVal = $phoneField.val(),
-                urlWithParams = url + "?" + 'email=' + $emailFieldVal + '&name=' + $nameFieldVal + '&roistat_id=' + $roistatVisit + '&phone=' + $phoneFieldVal + '&public_key=' + public_key + '&is_need_response=1';
+            // var url = "https://cloud.roistat.com/lead/register",
+            //     $emailFieldVal = $emailField.val(),
+            //     $nameFieldVal = $nameField.val(),
+            //     $phoneFieldVal = $phoneField.val(),
+            //     urlWithParams = url + "?" + 'email=' + $emailFieldVal + '&name=' + $nameFieldVal + '&roistat_id=' + $roistatVisit + '&phone=' + $phoneFieldVal + '&public_key=' + public_key + '&is_need_response=1';
 
-            fbq('track', 'Lead');
-            ga('send', 'event', 'roistat_lead', 'click');
+            // window.location.href = urlWithParams;
+            $.ajax({
+                type: 'POST',
+                url: 'https://roistat.com/ml/leadhunter/scripts/send.php',
+                data: {
+                    phone: $phoneField.val(),
+                    email: $emailField.val(),
+                    name: $nameField.val(),
+                    public_key: public_key,
+                    roistat_id: getCookie('roistat_visit')
+                },
+                success: function () {
+                    fbq('track', 'Lead');
+                    ga('send', 'event', 'roistat_lead', 'click');
+                    showAnswer(true);
+                },
+                error: function () {
+                    showAnswer(false);
+                }
+            });
+            
 
-            window.location.href = urlWithParams;
         }
 
         function submitDataToGetcourse() {

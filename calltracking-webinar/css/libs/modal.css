@@ -84,7 +84,7 @@
 
 .rs-modal .checkbox {
     display: flex;
-    margin-left: 28px;
+    margin: 16px 0 0 28px;
 }
 
 .rs-modal .checkbox>input {
