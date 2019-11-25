@@ -157,7 +157,7 @@
         function submitDataToGetcourse() {
             $.ajax({
                 type: 'POST',
-                url: 'https:/https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
+                url: 'https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
                 data: $form.serialize(),
                 success: function () {
                     showAnswer(true);
