@@ -2,13 +2,13 @@
     var initModal = function (el, options) {
         var $el = $(el),
             settings = {
-                title: '',
+                title: 'Записаться на вебинар',
                 successMessage: 'Ваши данные успешно отправлены. Спасибо!',
                 errorMessage: 'error',
                 erp: true,
                 getcourse: true,
                 getcourseID: 409792882,
-                buttonText: 'Отправить',
+                buttonText: 'Записаться',
                 public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
                     // id: 24840335,
@@ -157,7 +157,7 @@
         function submitDataToGetcourse() {
             $.ajax({
                 type: 'POST',
-                url: 'https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
+                url: 'https:/https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
                 data: $form.serialize(),
                 success: function () {
                     showAnswer(true);
