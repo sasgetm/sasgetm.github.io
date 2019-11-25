@@ -11,8 +11,8 @@
                 buttonText: 'Отправить',
                 public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
                 ym: {
-                    id: 24840335,
-                    targetName: 'fast_start_lead'
+                    // id: 24840335,
+                    // targetName: 'fast_start_lead'
                 }
             },
             $checkboxLink = $('.js-checkbox__link'),
@@ -142,8 +142,8 @@
                     roistat_id: getCookie('roistat_visit')
                 },
                 success: function () {
-                    fbq('track', 'Lead');
-                    ga('send', 'event', 'roistat_lead', 'click');
+                    // fbq('track', 'Lead');
+                    // ga('send', 'event', 'roistat_lead', 'click');
                     showAnswer(true);
                 },
                 error: function () {
@@ -157,7 +157,7 @@
         function submitDataToGetcourse() {
             $.ajax({
                 type: 'POST',
-                url: 'https:/https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
+                url: 'https://cors-anywhere.herokuapp.com/https://edu.roistat.com/pl/lite/block-public/process-html?id=' + settings.getcourseID + '&' + $form.serialize(),
                 data: $form.serialize(),
                 success: function () {
                     showAnswer(true);
@@ -220,6 +220,7 @@
 
                 submitData();
                 sendMetrics(settings.ym.id, settings.ym.targetName);
+                $form.submit();
             });
 
             $flagBox.on('click', function () {
