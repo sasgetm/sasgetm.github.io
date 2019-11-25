@@ -14,7 +14,8 @@ body {
   font-family: "Geometria", sans-serif;
   font-weight: 400;
   font-size: 24px;
-  background: #FEFEFE; }
+  background: #FEFEFE;
+  overflow-x: hidden; }
 
 ul {
   list-style-type: none;
@@ -105,7 +106,7 @@ p {
   vertical-align: bottom; }
 
 .bg_gray {
-  background: #ECEAED; }
+  background: #f8f8f8; }
 
 .button {
   display: inline-block; }
@@ -128,10 +129,14 @@ button, .button {
   transition: 0.25s; }
 
 button:hover, .button:hover {
-  background: linear-gradient(#17c18b, #00aa78); }
+  background: linear-gradient(#17c18b, #00aa78);
+  text-decoration: none; }
 
 .blue-button {
-  background: linear-gradient(0deg, #009FE2, #009FE2); }
+  background: #009FE2; }
+
+.blue-button:hover {
+  background: #42b5e5; }
 
 a {
   text-decoration: none;
@@ -152,12 +157,21 @@ a:focus {
   clear: both;
   content: ""; }
 
-.logo-button-header__logo {
+.logo-button-header__logo-block {
   float: left;
-  padding: 14px 0; }
+  padding: 14px 0;
+  text-align-last: auto; }
+
+.logo-button-header__logo {
+  display: inline-block; }
 
 .header__roistat-logo {
-  width: 278px; }
+  float: left;
+  width: 121px; }
+
+.header__academy-logo {
+  float: left;
+  width: 157px; }
 
 .logo-button-header__right-block {
   float: right; }
@@ -179,7 +193,8 @@ a:focus {
   text-decoration: none; }
 
 .first-floor {
-  padding: 20px 0 192px; }
+  padding: 20px 0 192px;
+  overflow-x: hidden; }
 
 .text-bgimg__subtitle {
   display: block;
@@ -196,10 +211,7 @@ a:focus {
   font-size: 40px;
   line-height: 48px;
   margin-bottom: 24px; }
-  .text-bgimg__description a {
-    color: #51B187;
-    text-decoration: none; }
-  .text-bgimg__description a:hover {
+  .text-bgimg__description .green {
     text-decoration: underline; }
 
 .text-bgimg__subdescription {
@@ -229,7 +241,7 @@ a:focus {
     margin: -54px 0 0 0; }
 
 .bg_half-gray {
-  background: linear-gradient(to bottom, #ECEAED 0%, #ECEAED 50%, #fff 50%, #fff 100%); }
+  background: linear-gradient(to bottom, #f8f8f8 0%, #f8f8f8 50%, #fff 50%, #fff 100%); }
 
 .item-topimg-text {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
@@ -259,7 +271,11 @@ a:focus {
   height: 394px;
   border-radius: 8px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+  display: block; }
+
+.item-topbgimg-text:hover {
+  text-decoration: none; }
 
 .item-topbgimg-text:before {
   content: "";
@@ -297,6 +313,9 @@ a:focus {
   position: absolute;
   bottom: 24px;
   left: 16px; }
+
+.item-topbgimg-text__link:hover {
+  text-decoration: underline; }
 
 .roistat-cases h2 {
   margin-bottom: 16px; }
@@ -480,7 +499,7 @@ a:focus {
     padding: 32px 0 24px;
     text-align: left; }
 
-  .logo-button-header__logo {
+  .logo-button-header__logo-block {
     float: initial; }
 
   .logo-button-header__right-block {
