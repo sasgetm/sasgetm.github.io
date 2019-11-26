@@ -9,7 +9,7 @@
                 getcourse: true,
                 getcourseID: 409792882,
                 buttonText: 'Записаться',
-                public_key: '19113A38BE29AE4BDF5B8C3CA16F6DE1',
+                public_key: '23F0A4094AC1171132512E2C2AE195C7',
                 ym: {
                     id: 24840335,
                     targetName: 'academy_calltracking_form_send'
@@ -43,13 +43,13 @@
         }
 
         function showError(field, message) {
-            $('<p class="error"><span class="highlight-error">Ошибка:</span> ' + message + '</p>').insertAfter(field.closest('.input-group'));
+            $('<p class="error">' + message + '</p>').insertAfter(field.closest('.input-group'));
                 field.addClass('error-field');
         }
 
         function checkNameField() {
             if ($nameField.val() === '') {
-                showError($nameField, 'для отправки формы заполните поле!');
+                showError($nameField, 'Кажется, вы кое-что не заполнили');
                 return false;
             }
             return true;
@@ -57,7 +57,7 @@
 
         function checkPhoneField() {
             if ($phoneField.val() === '') {
-                showError($phoneField, 'для отправки формы заполните поле!');
+                showError($phoneField, 'Кажется, вы кое-что не заполнили');
                 return false;
             }
             return true;
@@ -67,12 +67,12 @@
             var emailRegex = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 
             if ($emailField.val() === '') {
-                showError($emailField, 'для отправки формы заполните поле!');
+                showError($emailField, 'Кажется, вы кое-что не заполнили');
                 return false;
             }
 
             if (!(emailRegex.test($emailField.val()))) {
-                showError($emailField, 'адрес электронной почты указан некорректно');
+                showError($emailField, 'Адрес электронной почты указан некорректно');
                 return false;
             }
 
@@ -225,7 +225,7 @@
 
                 submitData();
                 sendMetrics(settings.ym.id, settings.ym.targetName);
-                
+
                 ga('send', 'event', 'academy_calltracking_form_send', 'click');
 
                 $form.submit();
