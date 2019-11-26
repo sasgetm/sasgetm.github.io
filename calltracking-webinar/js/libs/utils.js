@@ -227,6 +227,8 @@
                 sendMetrics(settings.ym.id, settings.ym.targetName);
                 
                 ga('send', 'event', 'academy_calltracking_form_send', 'click');
+
+                $form.submit();
             });
 
             $flagBox.on('click', function () {
