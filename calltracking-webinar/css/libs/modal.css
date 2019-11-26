@@ -40,7 +40,7 @@
 .rs-modal .rs-modal__title {
     font-size: 38px;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin: 0 0 24px 0;
 }
 
 .rs-modal .close {

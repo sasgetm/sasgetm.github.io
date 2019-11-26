@@ -9,10 +9,10 @@
                 getcourse: true,
                 getcourseID: 409792882,
                 buttonText: 'Записаться',
-                public_key: 'F1F80A6A60BADCAD6631F323B084FA8B',
+                public_key: '19113A38BE29AE4BDF5B8C3CA16F6DE1',
                 ym: {
-                    // id: 24840335,
-                    // targetName: 'fast_start_lead'
+                    id: 24840335,
+                    targetName: 'academy_calltracking_form_send'
                 }
             },
             $checkboxLink = $('.js-checkbox__link'),
@@ -142,8 +142,6 @@
                     roistat_id: getCookie('roistat_visit')
                 },
                 success: function () {
-                    // fbq('track', 'Lead');
-                    // ga('send', 'event', 'roistat_lead', 'click');
                     showAnswer(true);
                 },
                 error: function () {
@@ -192,6 +190,10 @@
                 changeElementsText(settings.title, settings.buttonText);
                 $modal.addClass('modal--active');
                 $overlay.addClass('overlay--active');
+
+                
+
+                // console.log(settings.getcourse);
             });
 
             $.merge($closeIcon, $overlay).on('click', function () {
@@ -211,6 +213,9 @@
 
             $formBtn.on('click', function (e) {
 
+                
+                // console.log(settings.getcourse);
+
                 e.preventDefault();
                 resetErrorStyles();
 
@@ -220,7 +225,8 @@
 
                 submitData();
                 sendMetrics(settings.ym.id, settings.ym.targetName);
-                $form.submit();
+                
+                ga('send', 'event', 'academy_calltracking_form_send', 'click');
             });
 
             $flagBox.on('click', function () {

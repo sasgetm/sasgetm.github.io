@@ -113,6 +113,7 @@ button, .button
 	border-radius: 4px
 	outline: none
 	transition: 0.25s
+	cursor: pointer
 button:hover, .button:hover
 	background: linear-gradient(#17c18b, #00aa78)
 	text-decoration: none
@@ -120,6 +121,17 @@ button:hover, .button:hover
 	background: #009FE2
 .blue-button:hover
 	background: #42b5e5
+.abutton
+	width: initial
+	height: initial
+	line-height: initial
+	font-weight: 400
+	text-decoration: underline
+	background: initial
+	box-shadow: initial
+.abutton:hover
+	background: initial
+	text-decoration: none
 
 a
 	text-decoration: none
@@ -129,6 +141,22 @@ a:hover, a:focus
 a:focus
 	text-decoration: underline
 	outline: none
+
+
+.x
+	cursor: pointer
+	z-index: 2
+	position: absolute
+	top: 10px
+	right: 10px
+	height: 15px
+	width: 15px
+	color: #000
+
+.x::before
+	content: "×"
+	font-size: 23px
+	font-family: "Times New Roman"
 
 
 
@@ -507,6 +535,9 @@ a:focus
 		font-weight: 700
 		font-size: 36px
 		line-height: 42px
+		margin-right: 0
+	.text-bgimg__subdescription
+		margin-right: 0
 	.text-bgimg__bg-block
 		text-align: center
 		margin-right: 0
