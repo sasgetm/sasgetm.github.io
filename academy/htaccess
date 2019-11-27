@@ -1,0 +1,30 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page6607366.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Scheme} =http
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^roistatacademy$ page6607366.html [NC]
+RewriteRule ^roistatacademy/$ page6607366.html [NC]
+
+RewriteRule ^practice$ page6828070.html [NC]
+RewriteRule ^practice/$ page6828070.html [NC]
+
+RewriteRule ^webinar$ page6893187.html [NC]
+RewriteRule ^webinar/$ page6893187.html [NC]
+
+RewriteRule ^5_reports$ page7296495.html [NC]
+RewriteRule ^5_reports/$ page7296495.html [NC]
+
+RewriteRule ^mediaplan$ page7480000.html [NC]
+RewriteRule ^mediaplan/$ page7480000.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild3165-6535-4666-b261-396663356537/roistat.ico [R=302,L]
+
