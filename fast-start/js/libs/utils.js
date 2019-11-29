@@ -133,7 +133,8 @@
             fbq('track', 'Lead');
             ga('send', 'event', 'roistat_lead', 'click');
 
-            window.location.href = urlWithParams;
+            // window.location.href = urlWithParams;
+            console.log(urlWithParams);
         }
 
         function submitDataToGetcourse() {
