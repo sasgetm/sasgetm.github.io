@@ -1,0 +1,521 @@
+$blue: #268FF0
+$lightblue: #F4FAFE
+
+*
+	box-sizing: border-box
+
+div, p, span, a, li, h1, h2, h3, h4, h5, h6, label, input, button
+	color: inherit
+	font-family: inherit
+	font-weight: inherit
+	font-size: inherit
+
+body
+	margin: 0
+	box-sizing: border-box
+	color: #000
+	font-family: 'Suisse Intl', sans-serif
+	font-weight: normal
+	font-size: 20px
+	line-height: 26px
+	background: #fff
+
+ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+
+p
+	margin: 0
+
+img
+	max-width: 100%
+
+.text_center
+	text-align: center
+.bold
+	font-weight: 700
+
+.container
+	width: 1260px
+	max-width: 100%
+	padding: 0 30px
+	margin: 0 auto
+	// overflow-x: hidden
+
+h1
+	font-size: 40px
+	line-height: 48px
+	font-weight: 600
+	padding: 0
+	margin: 0 0 32px 0
+	text-align: left
+
+
+h2
+	font-size: 60px
+	line-height: 69px
+	padding: 0
+	margin: 0 0 56px 0
+	text-align: left
+	font-weight: 500
+
+
+.row
+	margin: 0 -15px
+.row-flex
+	margin: 0 -15px
+	display: flex
+	align-items: center
+.row-flex-lg, .row-flex-md, .row-flex-sm, .row-flex-xs
+	margin: 0 -15px
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	justify-content: center
+.row:after, .row-flex:after, .row-flex-lg:after, .row-flex-md:after, .row-flex-sm:after, .row-flex-xs:after
+	content: ""
+	display: table
+	clear: both
+
+.col-md-7, .col-md-5, .col-md-6, .col-sm-6, .col-md-4, .col-sm-4, .col-md-8, .col-sm-8, .col-md-3, .col-sm-3, .col-md-2, .col-xs-6, .col-xs-4, .col-md-9
+	padding: 0 15px
+	float: left
+
+.col-md-9
+	width: 75%
+
+.col-md-7
+	width: 58.33333333%
+
+.col-md-5
+	width: 41.66666667%
+
+.col-md-6
+	width: 50%
+.col-sm-6, .col-xs-6
+	width: 50%
+
+.col-md-4, .col-sm-4
+	width: 33.33333333%
+.col-xs-4
+	width: 33.33333333% !important
+
+.col-md-8, .col-sm-8
+	width: 66.66666667%
+
+.col-md-3, .col-sm-3
+	width: 25%
+
+.col-md-2
+	width: 16.66666667%
+
+
+.col-md-70, .col-md-60, .col-md-40, .col-md-30, .col-md-20
+	float: left
+	padding: 0 15px
+.col-md-70
+	width: 70%
+.col-md-60
+	width: 60%
+.col-md-40
+	width: 40%
+.col-md-30
+	width: 30%
+.col-md-20
+	width: 20%
+
+.flex
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.flex-reverse
+	flex-direction: row-reverse
+
+.clear
+	clear: both
+
+.mobileshow
+	display: none
+
+a
+	text-decoration: underline
+	outline: none
+
+a:hover
+	text-decoration: none
+
+button, .button
+	display: inline-block
+	background: $blue
+	border-radius: 6px
+	padding: 0 26px
+	border: 0
+	color: #fff
+	line-height: 52px
+	font-weight: 500
+	font-size: 18px
+	text-decoration: none
+	max-width: 100%
+	height: 52px
+	outline: none
+	cursor: pointer
+	text-align: center
+
+button:hover, .button:hover
+	background: #71b3f0
+	text-decoration: none
+	color: #fff
+
+// .button-block
+// 	margin: 60px 0 0 0
+.over-overlay
+	position: fixed
+	top: 0
+	overflow: auto
+	width: 100%
+	z-index: 3
+	min-height: 100vh
+	display: none
+.overlay
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba(24, 38, 43, .9)
+	z-index: 3
+	display: none
+.success-popup
+	z-index: 5
+	padding: 100px 60px
+	p
+		margin-top: 45px
+		font-size: 21px
+		line-height: 25px
+.close-icon
+	cursor: pointer
+	z-index: 5
+	position: absolute
+	top: 25px
+	right: 25px
+	height: 32px
+	width: 32px
+	color: #000
+.close-icon::before
+	content: "×"
+	font-size: 60px
+	line-height: 32px
+	font-family: "Times New Roman"
+
+
+.section
+	padding: 60px 0
+
+
+.navbar
+	height: 104px
+	padding: 20px 0
+	position: absolute
+	width: 100%
+	top: 0
+	left: 0
+	z-index: 2
+	.container
+		display: flex
+		justify-content: space-between
+		align-items: center
+.navbar__logo
+	width: 89px
+	img
+		width: 100%
+
+
+
+.floor1
+	background: url(../img/fl1bg.png) right top no-repeat
+	background-size: 715px
+	padding-top: 164px
+	.img-block
+		text-align: center
+	// img
+	p
+		margin-bottom: 40px
+	// .button-block
+	.tree
+		width: 40px
+.floor2
+	padding-bottom: 120px
+	p
+		font-size: 40px
+		line-height: 48px
+.floor3
+	background: $lightblue
+	padding: 72px 0
+	position: relative
+	margin-bottom: 120px
+	h2
+		font-size: 48px
+		line-height: 57px
+	.rocket
+		width: 48px
+	.flex
+		align-items: start
+.floor3:after
+	position: absolute
+	z-index: -1
+	content: ''
+	width: 106px
+	height: 129px
+	background: url(../img/toy.png) center center no-repeat
+	background-size: contain
+	bottom: -185px
+	left: 28%
+.floor3__item
+	margin-right: 40px
+	max-width: 33%
+	h3
+		color: $blue
+		font-size: 36px
+		line-height: 42px
+		margin: 0 0 24px 0
+		padding: 0
+		font-weight: 600
+	p
+		font-size: 20px
+		line-height: 26px
+.floor3__item:last-child
+	margin-right: 0
+.floor-form
+	background: $blue
+	color: #fff
+	.top-block
+		margin-bottom: 40px
+	// .text-block
+	h2
+		font-size: 40px
+		line-height: 46px
+		margin-bottom: 24px
+	p
+		font-size: 24px
+		line-height: 28px
+	.img-block
+		flex-shrink: 0
+		img
+			width: 298px
+			max-width: 100%
+	.gift
+		width: 50px
+.form-block
+	input[type='text']
+		width: 38%
+		margin-right: 2%
+		background: #E9F3FF
+		height: 60px
+		line-height: 60px
+		font-size: 18px
+		padding: 0 20px
+		border-radius: 8px
+		outline: none
+		border: 0
+		color: #000
+	input[type='text'].error
+		border: 2px solid #ff0000
+	input::-webkit-input-placeholder
+		color: #A6AFBD
+	input::-moz-placeholder
+		color: #A6AFBD
+	input:-moz-placeholder
+		color: #A6AFBD
+	input:-ms-input-placeholder
+		color: #A6AFBD
+	.button-block
+		margin-left: 3%
+		position: relative
+	button[type='submit']
+		background: #fff
+		color: $blue
+		height: 60px
+		line-height: 60px
+	button[type='submit']:hover
+		box-shadow: 0 0 20px #fff
+		color: #71b3f0
+.button-block__description
+	position: absolute
+	left: 0
+	width: 100%
+	text-align: center
+	bottom: -29px
+	font-size: 14px
+	line-height: 17px
+.form-block__agreecheck
+	position: relative
+	margin-top: 24px
+	width: 76%
+	.agreecheck 
+		position: absolute
+		left: 0
+		margin: 0
+		top: 3px
+	label
+		padding: 0 0 0 25px
+		font-size: 16px
+		line-height: 19px
+		display: block
+.form-block__agreecheck.error
+	padding: 8px
+	border: 2px solid #ff0000
+	border-radius: 8px
+	.agreecheck 
+		left: 8px
+		margin: 0
+		top: 11px
+.floor5
+	padding-top: 120px
+	h2
+		margin-bottom: 72px
+	.cup
+		width: 60px
+	.phone, .joystick
+		width: 18px
+	.button-block
+		text-align: center
+	button, .button
+		height: 68px
+		line-height: 68px
+		padding: 0 28px
+		font-size: 24px
+.textitem
+	padding: 60px 0 0 40px
+	position: relative
+	margin-bottom: 48px
+.textitem__title
+	position: absolute
+	top: 0
+	left: 0
+	font-size: 123px
+	line-height: 123px
+	color: #E9F3FF
+	font-weight: 700
+	z-index: -1
+	p
+		font-size: 18px
+		line-height: 23px
+
+.floor6
+	h2
+		margin-bottom: 72px
+	.card
+		display: flex
+		justify-content: start
+		align-items: center
+		border-radius: 20px
+		height: 128px
+		padding: 8px 16px
+		background: #F4FAFE
+		margin-bottom: 40px
+	.icon
+		width: 96px
+		height: 96px
+		margin-right: 8px
+		flex-shrink: 0
+	.description
+		font-size: 18px
+		line-height: 23px
+.floor7
+	background: $lightblue
+	ul
+	li
+		font-size: 16px
+		line-height: 20px
+		padding: 0 0 0 30px
+		background: url(../img/list.svg) left 5px no-repeat
+		background-size: 14px
+		margin-bottom: 20px
+.floor8
+	background: $lightblue
+	position: relative
+	h2
+		font-size: 51px
+		line-height: 59px
+		margin-bottom: 48px
+	p
+		margin-bottom: 56px
+		font-size: 24px
+		line-height: 31px
+	.light
+		width: 51px
+
+// .cards-row
+
+.cards-row__item
+	margin-bottom: 18px
+	height: 250px
+	padding: 57px 0 0 0
+	box-shadow: 0px 13px 21px rgba(0, 40, 69, 0.05)
+	border-radius: 7px
+	background: #fff
+.cards-row__img-block
+	margin-bottom: 34px
+	text-align: center
+	height: 65px
+.cards-row__text
+	display: block
+	font-weight: 500
+	font-size: 20px
+	line-height: 24px
+	text-align: center
+	padding: 0 15px
+
+
+
+.footer
+	background: $lightblue
+	padding: 20px 0
+	.copy
+		display: block
+		font-size: 14px
+		line-height: 22px
+	.footer__right-block
+	// ul
+	li
+		display: inline-block
+		margin-right: 24px
+		text-align: right
+	a
+		text-decoration: none
+		color: #000
+		font-size: 14px
+		line-height: 22px
+	a:hover
+		text-decoration: underline
+	.flex
+		align-items: start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
